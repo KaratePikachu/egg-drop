@@ -2,5 +2,25 @@
 
 [ext_resource type="Script" uid="uid://blbqh1gyvgsq2" path="res://level/level.gd" id="1_7lnir"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lnir"]
+size = Vector2(556, 40)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qohg2"]
+radius = 28.0
+height = 74.0
+
 [node name="Level" type="Node2D" unique_id=1976594912]
 script = ExtResource("1_7lnir")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=196375677]
+position = Vector2(188, 196)
+rotation = 0.35623133
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=670874834]
+shape = SubResource("RectangleShape2D_7lnir")
+
+[node name="Egg" type="RigidBody2D" parent="." unique_id=385578144]
+position = Vector2(-2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg" unique_id=231795039]
+shape = SubResource("CapsuleShape2D_qohg2")
