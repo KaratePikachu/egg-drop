@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ctoke2wtxl743"]
+
+[ext_resource type="Texture2D" uid="uid://bq1kxrxmub3qq" path="res://icon.svg" id="1_wo556"]
+[ext_resource type="Script" uid="uid://cgkkpoihbsf3s" path="res://test/egg.gd" id="2_2h7ub"]
+[ext_resource type="Texture2D" uid="uid://cvbm652v6jwfp" path="res://test/ruler-icon-28.png" id="3_2h7ub"]
+
+[node name="TestPhysicsScene" type="Node2D" unique_id=1424677881]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=290957376]
+position = Vector2(1440, 12443)
+scale = Vector2(20.253906, 55.861324)
+texture = ExtResource("3_2h7ub")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=585253029]
+position = Vector2(400, 0)
+script = ExtResource("2_2h7ub")
+parachute_terminal_velocity = 80.0
+
+[node name="Egg" type="Sprite2D" parent="CharacterBody2D" unique_id=1622334333]
+scale = Vector2(1, 3.5234375)
+texture = ExtResource("1_wo556")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=692496194]
