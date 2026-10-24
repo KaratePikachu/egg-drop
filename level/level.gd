@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 class_name Level
 
@@ -10,12 +11,10 @@ static var active_modifications : Array[Modification]
 static var levels : Array[String]
 @export var level_number : int
 
-func _ready() -> void:
-	pass
+@onready var mod_menu : ModificationMenu = $CanvasLayer/ModificationMenu
+#func _ready() -> void:
 
 
-func _process(delta: float) -> void:
-	print(active_modifications)
 
 #region Changing Active Modifications
 static func add_mod(modification : Modification) -> void:

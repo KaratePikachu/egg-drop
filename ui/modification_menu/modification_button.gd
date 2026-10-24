@@ -1,6 +1,11 @@
+@tool
 extends Button
+class_name ModificationButton
 
-@export var modification : Modification
+@export var modification : Modification:
+	set(val):
+		modification = val
+		visible = modification != null
 
 
 func _on_toggled(toggled_on: bool) -> void:
