@@ -13,45 +13,39 @@ class_name Egg
 
 @export var modifications: Array[Modification]
 
-var unused: Array[Modification]
-var toggled: Array[Modification]
-var untoggled: Array[Modification]
-
 var omega: float = 0.0
 var fan_force = 0
 var parachute_open: bool
 var theta: float = 0.0
 
 func _refresh_mods() -> void:
-	unused.clear()
-	toggled.clear()
-	untoggled.clear()
+	for mod : Modification in modifications:
+		mod.used = false
+		mod.toggled = false
 
 func _ready() -> void:
-	for mod in modifications:
-		if mod.is_single_use:
-			unused.append(mod)
-		else:
-			untoggled.append(mod)
+	_refresh_mods()
 
-func _process(delta: float) -> void:
+func _input(event: InputEvent) -> void:
 	for mod in modifications:
-		if Input.is_action_just_pressed(mod.input):
-			if mod.is_single_use:
-				if mod in unused:
-					unused.erase(mod)
-					activate_mod(mod)
+		if not event.is_action_pressed(mod.input):
+			continue
+		
+		if mod.is_single_use and mod.used:
+			continue
+		
+		if mod.is_single_use:
+			activate_mod(mod)
+			mod.used = true
+		else:
+			if not mod.toggled:
+				activate_mod(mod)
 			else:
-				if mod in toggled:
-					toggled.erase(mod)
-					deactivate_mod(mod)
-					untoggled.append(mod)
-				elif mod in untoggled:
-					untoggled.erase(mod)
-					activate_mod(mod)
-					toggled.append(mod)
-			
+				deactivate_mod(mod)
+		return
+
 func deactivate_mod(mod: Modification) -> void:
+	mod.toggled = false
 	match mod.name:
 		"left_fan":
 			fan_force -= -5	
@@ -61,6 +55,7 @@ func deactivate_mod(mod: Modification) -> void:
 			parachute_open = false
 	
 func activate_mod(mod: Modification) -> void:
+	mod.toggled = true
 	match mod.name:
 		"left_fan":
 			fan_force += -5	
