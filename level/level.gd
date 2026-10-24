@@ -20,9 +20,13 @@ func _process(delta: float) -> void:
 
 #region Level Loading
 func next_level() -> void:
-	SceneChanger.change_to_file(levels[level_number-1+1])
+	Level.load_level(level_number+1)
 
+func restart_level() -> void:
+	Level.load_level(level_number,false)
 
-static func load_level(level_num : int) -> void:
+static func load_level(level_num : int, reset_active_modifications : bool = true) -> void:
+	if reset_active_modifications:
+		active_modifications.clear()
 	SceneChanger.change_to_file(levels[level_num-1])
 #endregion
