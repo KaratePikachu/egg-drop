@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://blbqh1gyvgsq2" path="res://level/level.gd" id="1_7lnir"]
 [ext_resource type="PackedScene" uid="uid://xwnwd7qpbs56" path="res://ui/modification_menu/modification_menu.tscn" id="2_5gx2l"]
-[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="2_qohg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lnir"]
 size = Vector2(556, 40)
@@ -30,4 +29,3 @@ shape = SubResource("CapsuleShape2D_qohg2")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1883544062]
 
 [node name="ModificationMenu" parent="CanvasLayer" unique_id=961803805 instance=ExtResource("2_5gx2l")]
-available_mods = Array[ExtResource("2_qohg2")]([])

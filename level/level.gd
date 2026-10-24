@@ -12,9 +12,10 @@ static var levels : Array[String]
 @export var level_number : int
 
 @onready var mod_menu : ModificationMenu = $CanvasLayer/ModificationMenu
-#func _ready() -> void:
 
-
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("restart_level"):
+		restart_level()
 
 #region Changing Active Modifications
 static func add_mod(modification : Modification) -> void:

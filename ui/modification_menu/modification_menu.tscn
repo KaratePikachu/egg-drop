@@ -69,7 +69,7 @@ _data = {
 &"show": SubResource("Animation_sueqx")
 }
 
-[node name="ModificationMenu" type="Control" unique_id=961803805]
+[node name="ModificationMenu" type="Control" unique_id=961803805 node_paths=PackedStringArray("mod_button_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,7 +77,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sueqx")
-available_mods = null
+mod_button_container = NodePath("SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications")
 
 [node name="SlidingArea" type="Control" parent="." unique_id=1819905087]
 layout_mode = 1
