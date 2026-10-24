@@ -4,7 +4,6 @@ class_name Egg
 @export var radius: float
 @export var parachute_terminal_velocity: float
 @export var mass: float = 200
-@onready var sprite: Sprite2D = $Egg
 
 var stiffness: float = 20.0
 var omega: float = 0.0
@@ -37,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	var omega_accel = torque - stiffness * theta - damping * omega
 	omega += omega_accel * delta
 	theta += omega * delta
-	sprite.rotation = theta
+	rotation = theta
 
 	var accel = sin(theta) * tilt_factor - drag_x * velocity.x
 	velocity.x += accel * delta
