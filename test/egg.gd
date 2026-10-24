@@ -5,29 +5,69 @@ class_name Egg
 @export var parachute_terminal_velocity: float
 @export var mass: float = 200
 
-var stiffness: float = 20.0
+@export var stiffness: float = 20.0
+@export var damping: float = 3
+
+@export var tilt_factor: float = -5000.0
+@export var drag_x: float = 20.0
+
+@export var modifications: Array[Modification]
+
+var unused: Array[Modification]
+var toggled: Array[Modification]
+var untoggled: Array[Modification]
+
 var omega: float = 0.0
-var damping: float = 3
-
-var tilt_factor: float = -5000.0
-var drag_x: float = 20.0
-
-var fan_force = -5
-
+var fan_force = 0
 var parachute_open: bool
-
 var theta: float = 0.0
 
-# Called when the node enters the scene tree for the first time.
+func _refresh_mods() -> void:
+	unused.clear()
+	toggled.clear()
+	untoggled.clear()
+
 func _ready() -> void:
-	pass # Replace with function body.
+	for mod in modifications:
+		if mod.is_single_use:
+			unused.append(mod)
+		else:
+			untoggled.append(mod)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("main_mod"):
-		parachute_open = not parachute_open
+	for mod in modifications:
+		if Input.is_action_just_pressed(mod.input):
+			if mod.is_single_use:
+				if mod in unused:
+					unused.erase(mod)
+					activate_mod(mod)
+			else:
+				if mod in toggled:
+					toggled.erase(mod)
+					deactivate_mod(mod)
+					untoggled.append(mod)
+				elif mod in untoggled:
+					untoggled.erase(mod)
+					activate_mod(mod)
+					toggled.append(mod)
+			
+func deactivate_mod(mod: Modification) -> void:
+	match mod.name:
+		"left_fan":
+			fan_force -= -5	
+		"right_fan":
+			fan_force -= 5
+		"basic_umbrella":
+			parachute_open = false
 	
-	if Input.is_action_just_pressed("mod_1"):
-		fan_force *= -1
+func activate_mod(mod: Modification) -> void:
+	match mod.name:
+		"left_fan":
+			fan_force += -5	
+		"right_fan":
+			fan_force += 5
+		"basic_umbrella":
+			parachute_open = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
