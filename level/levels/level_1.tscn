@@ -7,5 +7,10 @@
 [node name="Level1" unique_id=1976594912 instance=ExtResource("1_roo1r")]
 level_number = 1
 
+[node name="Camera2D" parent="." index="0" unique_id=380594531]
+position = Vector2(540, 10000)
+limit_top = 0
+limit_bottom = 2500
+
 [node name="ModificationMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1883544062) index="0" unique_id=961803805]
 available_mods = Array[ExtResource("2_35gx7")]([ExtResource("3_wg4fv")])

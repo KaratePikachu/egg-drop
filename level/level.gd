@@ -10,8 +10,19 @@ enum Phase{
 static var active_modifications : Array[Modification]
 static var levels : Array[String]
 @export var level_number : int
+@export var win_floor_y : float = 2400:
+	set(val):
+		win_floor_y = val
+		win_floor.position.y = win_floor_y
 
+@export var win_floor : Node2D
+
+@onready var camera : Camera2D = $Camera2D
 @onready var mod_menu : ModificationMenu = $CanvasLayer/ModificationMenu
+
+func _ready() -> void:
+	camera.limit_top = 0
+	camera.limit_bottom = win_floor_y + 100
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart_level"):

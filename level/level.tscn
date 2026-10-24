@@ -6,12 +6,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lnir"]
 size = Vector2(556, 40)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qohg2"]
-radius = 28.0
-height = 74.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4td4"]
+size = Vector2(1080, 208)
 
-[node name="Level" type="Node2D" unique_id=1976594912]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gx2l"]
+size = Vector2(1080, 28)
+
+[node name="Level" type="Node2D" unique_id=1976594912 node_paths=PackedStringArray("win_floor")]
 script = ExtResource("1_7lnir")
+win_floor = NodePath("WinFloor")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=380594531]
+position = Vector2(540, 1200)
+position_smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=196375677]
 position = Vector2(188, 196)
@@ -20,12 +27,21 @@ rotation = 0.35623133
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=670874834]
 shape = SubResource("RectangleShape2D_7lnir")
 
-[node name="Egg" type="RigidBody2D" parent="." unique_id=385578144]
-position = Vector2(-2, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg" unique_id=231795039]
-shape = SubResource("CapsuleShape2D_qohg2")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1883544062]
 
 [node name="ModificationMenu" parent="CanvasLayer" unique_id=961803805 instance=ExtResource("2_5gx2l")]
+
+[node name="WinFloor" type="Node2D" parent="." unique_id=1248466689]
+position = Vector2(0, 2400)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WinFloor" unique_id=1091035354]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinFloor/StaticBody2D" unique_id=1543687087]
+position = Vector2(540, 104)
+shape = SubResource("RectangleShape2D_r4td4")
+
+[node name="WinArea" type="Area2D" parent="WinFloor" unique_id=675124046]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WinFloor/WinArea" unique_id=352171666]
+position = Vector2(540, -14)
+shape = SubResource("RectangleShape2D_5gx2l")
