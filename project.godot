@@ -14,6 +14,10 @@ config/name="EggDrop"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneChanger="*uid://j0ny4fmnyf4u"
+
 [display]
 
 window/size/viewport_width=1080

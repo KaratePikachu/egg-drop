@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cjury4x30i6c5"]
+
+[ext_resource type="Script" uid="uid://bhe5pw280xwff" path="res://ui/main_menu/level_button.gd" id="1_8a1js"]
+[ext_resource type="Texture2D" uid="uid://bq1kxrxmub3qq" path="res://icon.svg" id="2_rs4s2"]
+
+[node name="LevelButton" type="Button" unique_id=1893504828]
+custom_minimum_size = Vector2(300, 300)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 144
+script = ExtResource("1_8a1js")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1247858959]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -134.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = -13
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=314428106]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_rs4s2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1315406712]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+texture = ExtResource("2_rs4s2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=208195342]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_rs4s2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelNum" type="Label" parent="." unique_id=1943757896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 124
+text = "X"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

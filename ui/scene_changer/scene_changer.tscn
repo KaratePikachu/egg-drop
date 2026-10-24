@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://j0ny4fmnyf4u"]
+
+[ext_resource type="Script" uid="uid://b4nhemg72ei6i" path="res://ui/scene_changer/scene_changer.gd" id="1_4m76s"]
+
+[node name="SceneChanger" type="Control" unique_id=162302734]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4m76s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1947475796]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

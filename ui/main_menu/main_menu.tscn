@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://gey1vtq0ytyj"]
 
+[ext_resource type="Script" uid="uid://dbldu47dobohd" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
+[ext_resource type="PackedScene" uid="uid://cjury4x30i6c5" path="res://ui/main_menu/level_button.tscn" id="2_mu8pm"]
+
 [node name="MainMenu" type="Control" unique_id=620243091]
 layout_mode = 3
 anchors_preset = 15
@@ -7,11 +10,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uhj5c")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=396949689]
+[node name="MainMenu" type="ColorRect" parent="." unique_id=396949689]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=2024138492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainMenu/VBoxContainer" unique_id=1447975187]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 165
+text = "Egg Drop
+Game"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MainMenu/VBoxContainer" unique_id=1390529445]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 144
+text = "Start"
+
+[node name="Button2" type="Button" parent="MainMenu/VBoxContainer" unique_id=1956554475]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 144
+text = "Settings"
+
+[node name="Button3" type="Button" parent="MainMenu/VBoxContainer" unique_id=975049597]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 144
+text = "Quit"
+
+[node name="LevelSelect" type="ColorRect" parent="." unique_id=1848036556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect" unique_id=733512137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LevelSelect/VBoxContainer" unique_id=1470075991]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 165
+text = "Level
+Select"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="LevelSelect/VBoxContainer" unique_id=1531454266]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="LevelButton" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=1893504828 instance=ExtResource("2_mu8pm")]
+layout_mode = 2
+level_num = 1
+
+[node name="LevelButton2" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=104805574 instance=ExtResource("2_mu8pm")]
+layout_mode = 2
+level_num = 2
+
+[node name="LevelButton3" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=40109251 instance=ExtResource("2_mu8pm")]
+layout_mode = 2
+level_num = 3
