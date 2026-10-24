@@ -15,8 +15,28 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
+	print(active_modifications)
 
+#region Changing Active Modifications
+static func add_mod(modification : Modification) -> void:
+	var i : int = find_modification(modification)
+	if i != -1:
+		return
+	active_modifications.append(modification)
+
+static func remove_mod(modification : Modification) -> void:
+	var i : int = find_modification(modification)
+	if i == -1:
+		return
+	active_modifications.remove_at(i)
+
+static func find_modification(modification : Modification) -> int:
+	for i : int in range(active_modifications.size()):
+		var mod : Modification = active_modifications[i]
+		if mod.name == modification.name:
+			return i
+	return -1
+#endregion
 
 #region Level Loading
 func next_level() -> void:

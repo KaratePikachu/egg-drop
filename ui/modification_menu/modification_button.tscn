@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://47sdh7xrojlf"]
+
+[ext_resource type="Script" uid="uid://bax58odohq4u4" path="res://ui/modification_menu/modification_button.gd" id="1_6rt2e"]
+
+[node name="ModificationButton" type="Button" unique_id=1716547921]
+custom_minimum_size = Vector2(200, 200)
+size_flags_horizontal = 4
+toggle_mode = true
+script = ExtResource("1_6rt2e")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpg0ctscpw0h5"]
 
 [ext_resource type="Script" uid="uid://blbqh1gyvgsq2" path="res://level/level.gd" id="1_7lnir"]
-[ext_resource type="Texture2D" uid="uid://bq1kxrxmub3qq" path="res://icon.svg" id="2_5gx2l"]
+[ext_resource type="PackedScene" uid="uid://xwnwd7qpbs56" path="res://ui/modification_menu/modification_menu.tscn" id="2_5gx2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lnir"]
 size = Vector2(556, 40)
@@ -9,16 +9,6 @@ size = Vector2(556, 40)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qohg2"]
 radius = 28.0
 height = 74.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lnir"]
-bg_color = Color(0.61970025, 0.24652845, 0, 1)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.49803922, 0.19215687, 0, 1)
-corner_radius_top_left = 70
-corner_radius_bottom_left = 70
 
 [node name="Level" type="Node2D" unique_id=1976594912]
 script = ExtResource("1_7lnir")
@@ -38,59 +28,4 @@ shape = SubResource("CapsuleShape2D_qohg2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1883544062]
 
-[node name="ModificationMenu" type="Control" parent="CanvasLayer" unique_id=1846978638]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SlidingArea" type="Control" parent="CanvasLayer/ModificationMenu" unique_id=1099975197]
-layout_mode = 1
-anchor_left = 0.5925926
-anchor_top = 0.50666666
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Tab" type="Panel" parent="CanvasLayer/ModificationMenu/SlidingArea" unique_id=259124178]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.29090908
-anchor_right = 0.21818182
-anchor_bottom = 0.16216215
-offset_top = 48.0
-offset_bottom = 48.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7lnir")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ModificationMenu/SlidingArea/Tab" unique_id=612661614]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.116000004
-anchor_top = 0.208
-anchor_right = 0.56200004
-anchor_bottom = 0.79200006
-offset_left = 0.01599884
-offset_top = 0.06400299
-offset_right = 0.11199188
-offset_bottom = -0.06401062
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_5gx2l")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Panel" type="Panel" parent="CanvasLayer/ModificationMenu/SlidingArea" unique_id=915734963]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7lnir")
+[node name="ModificationMenu" parent="CanvasLayer" unique_id=961803805 instance=ExtResource("2_5gx2l")]

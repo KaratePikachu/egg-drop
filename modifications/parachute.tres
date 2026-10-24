@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Modification" format=3 uid="uid://b36e0deyggd1c"]
+
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="1_5khe8"]
+[ext_resource type="Texture2D" uid="uid://bq1kxrxmub3qq" path="res://icon.svg" id="1_mcm1r"]
+
+[resource]
+script = ExtResource("1_5khe8")
+name = "Parachute"
+icon = ExtResource("1_mcm1r")
+metadata/_custom_type_script = "uid://cylr504fygfq5"
