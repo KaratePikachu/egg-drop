@@ -6,16 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://b4gxj00g4y8o4" path="res://egg/dummy_egg.tscn" id="2_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://b86ir38reinvl" path="res://ui/level_end/level_end.tscn" id="3_44x8d"]
 [ext_resource type="Texture2D" uid="uid://bgp4wj4ips88u" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/BrickBGTileArt.png" id="6_0v1st"]
-[ext_resource type="AudioStream" uid="uid://bajbi2k7gnb12" path="res://assets/music/egg theme.ogg" id="6_44x8d"]
 [ext_resource type="Texture2D" uid="uid://dqdkytms3lftm" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/ConcreteTileMiddleArt.png" id="7_6gtgk"]
 [ext_resource type="Texture2D" uid="uid://ds1v5qqdajjvx" path="res://assets/StudentBodyArt.png" id="9_cw150"]
 [ext_resource type="Texture2D" uid="uid://ddncc2hafs5cx" path="res://assets/StudentArmsArt.png" id="10_xii2b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4td4"]
-size = Vector2(4696, 208)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gx2l"]
-size = Vector2(4376, 87)
+size = Vector2(4376, 735)
 
 [sub_resource type="Gradient" id="Gradient_cw150"]
 offsets = PackedFloat32Array(0)
@@ -50,28 +46,17 @@ level = NodePath("../..")
 [node name="WinFloor" type="Node2D" parent="." unique_id=1248466689]
 position = Vector2(0, 6000)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="WinFloor" unique_id=1091035354]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WinFloor/StaticBody2D" unique_id=1543687087]
-position = Vector2(540, 104)
-shape = SubResource("RectangleShape2D_r4td4")
-
 [node name="WinArea" type="Area2D" parent="WinFloor" unique_id=675124046]
 
 [node name="WinCollider" type="CollisionShape2D" parent="WinFloor/WinArea" unique_id=352171666]
-position = Vector2(540, -43.5)
+position = Vector2(540, 280.5)
 shape = SubResource("RectangleShape2D_5gx2l")
 
 [node name="Concrete2" type="Sprite2D" parent="WinFloor" unique_id=663939093]
 z_index = -1
-position = Vector2(532, 139)
-scale = Vector2(10.773437, 0.9609376)
+position = Vector2(532, 90.9998)
+scale = Vector2(10.773437, 1.3359392)
 texture = ExtResource("7_6gtgk")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=321153488]
-stream = ExtResource("6_44x8d")
-autoplay = true
-parameters/looping = true
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=923166385]
 z_index = -2

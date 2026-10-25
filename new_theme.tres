@@ -42,7 +42,37 @@ corner_radius_bottom_left = 25
 shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 15
 
+[sub_resource type="Gradient" id="Gradient_j2q5q"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i5wg5"]
+gradient = SubResource("Gradient_j2q5q")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c04x"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7eh4"]
+bg_color = Color(0.26293245, 0.26293248, 0.26293233, 1)
+border_width_top = 40
+border_width_bottom = 40
+border_color = Color(0.3032328, 0.30323288, 0.30323264, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [resource]
 Button/styles/hover = SubResource("StyleBoxFlat_n13yq")
 Button/styles/normal = SubResource("StyleBoxFlat_amlv4")
 Button/styles/pressed = SubResource("StyleBoxFlat_j2q5q")
+HSlider/icons/grabber = SubResource("GradientTexture2D_i5wg5")
+HSlider/icons/grabber_disabled = SubResource("GradientTexture2D_i5wg5")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_i5wg5")
+HSlider/icons/tick = SubResource("GradientTexture2D_i5wg5")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_3c04x")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_3c04x")
+HSlider/styles/slider = SubResource("StyleBoxFlat_i7eh4")
