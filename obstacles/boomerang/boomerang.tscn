@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c0imnixfxxm2u"]
+
+[ext_resource type="Script" uid="uid://c6jvcf0urt4qm" path="res://obstacles/boomerang/boomerang.gd" id="1_f3bur"]
+[ext_resource type="Texture2D" uid="uid://cvg6wq4vx10d" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/boomerang.png" id="1_nihms"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sita2"]
+size = Vector2(21244, 494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_087e3"]
+size = Vector2(66, 255)
+
+[node name="Boomerang" type="CharacterBody2D" unique_id=645416866]
+script = ExtResource("1_f3bur")
+jump_duration = 1.0
+fall_speed = 10.0
+throw_distance = 1000.0
+
+[node name="Warning" type="Area2D" parent="." unique_id=1683182662]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Warning" unique_id=552480895]
+position = Vector2(499, -17)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="Boomerang" type="StaticBody2D" parent="." unique_id=262366604]
+
+[node name="BoomerangArea" type="Area2D" parent="Boomerang" unique_id=1421676532]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boomerang/BoomerangArea" unique_id=388825407]
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="BoomSprite" type="Sprite2D" parent="Boomerang" unique_id=1663812196]
+position = Vector2(10, 0)
+texture = ExtResource("1_nihms")
+
+[connection signal="body_entered" from="Warning" to="." method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Boomerang/BoomerangArea" to="." method="_on_shark_area_body_entered"]
