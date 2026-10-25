@@ -13,15 +13,24 @@ radius = 78.05767
 script = ExtResource("1_kf13i")
 
 [node name="EmptyWindowArt" type="Sprite2D" parent="." unique_id=39762301]
+scale = Vector2(2, 2)
 texture = ExtResource("4_u5v5p")
 
 [node name="MafiaGuyBodyArt" type="Sprite2D" parent="." unique_id=37711684]
+scale = Vector2(2, 2)
 texture = ExtResource("1_kfoe6")
 
-[node name="MafiaGuyArmArt" type="Sprite2D" parent="." unique_id=993006565]
+[node name="Arm" type="Node2D" parent="." unique_id=1538965147]
+position = Vector2(-26, 151)
+rotation = -0.0837758
+
+[node name="MafiaGuyArmArt" type="Sprite2D" parent="Arm" unique_id=993006565]
+position = Vector2(26, -151)
+scale = Vector2(2, 2)
 texture = ExtResource("2_kf13i")
 
 [node name="Crosshair" type="Area2D" parent="." unique_id=1290096798]
+z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crosshair" unique_id=2119925646]
 shape = SubResource("CircleShape2D_kfoe6")
@@ -29,5 +38,3 @@ shape = SubResource("CircleShape2D_kfoe6")
 [node name="MafiaGuyCrosshairArt" type="Sprite2D" parent="Crosshair" unique_id=680431448]
 position = Vector2(-3, 12)
 texture = ExtResource("3_hf7er")
-
-[connection signal="body_entered" from="Crosshair" to="." method="_on_crosshair_body_entered"]

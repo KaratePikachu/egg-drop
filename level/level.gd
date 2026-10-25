@@ -9,7 +9,7 @@ enum Phase{
 	END,
 }
 
-static var entering_new_level : bool = true
+static var entering_new_level : bool = false
 static var active_modifications : Array[Modification]
 static var levels : Array[String] = [
 	"res://level/levels/level_1.tscn",
