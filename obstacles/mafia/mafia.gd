@@ -36,8 +36,9 @@ func _process(delta: float) -> void:
 			if bodies.has(egg):
 				egg.death()
 			$Crosshair.hide()
-	
-	var x_diff := egg.global_position.x-global_position.x
+	var x_diff: float
+	if egg:
+		x_diff = egg.global_position.x-global_position.x
 	if x_diff > 0:
 		$MafiaGuyBodyArt.flip_h = false
 		$Arm/MafiaGuyArmArt.flip_h = false

@@ -164,7 +164,7 @@ func _physics_process(delta: float) -> void:
 	rotation = theta
 
 	if parachute_open:
-		var accel = sin(theta) * tilt_factor - drag_x * velocity.x
+		var accel = sin(theta) * tilt_factor * 1.5 - drag_x * velocity.x
 		velocity.x += accel * delta
 		if not landed:
 			velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 1.5

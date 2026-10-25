@@ -11,6 +11,7 @@ size = Vector2(14863, 513)
 
 [node name="Eagle" type="Node2D" unique_id=1361653599]
 script = ExtResource("1_pgl7m")
+eagle_velocity = 2200.0
 
 [node name="Eagle" type="CharacterBody2D" parent="." unique_id=1263646688]
 position = Vector2(1, 0)
