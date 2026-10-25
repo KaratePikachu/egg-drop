@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://buj37luy0o07e"]
+
+[ext_resource type="Script" uid="uid://dvjbyb00lin0k" path="res://obstacles/eagle/eagle.gd" id="1_pgl7m"]
+[ext_resource type="Texture2D" uid="uid://cevuv6c10bi7n" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/EagleArt.png" id="2_yhln1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_087e3"]
+size = Vector2(751, 204.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sita2"]
+size = Vector2(14863, 513)
+
+[node name="Eagle" type="Node2D" unique_id=1361653599]
+script = ExtResource("1_pgl7m")
+
+[node name="Eagle" type="CharacterBody2D" parent="." unique_id=1263646688]
+position = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Eagle" unique_id=293885009]
+position = Vector2(-1, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_yhln1")
+
+[node name="EagleHitbox" type="Area2D" parent="Eagle" unique_id=175300087]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eagle/EagleHitbox" unique_id=969241134]
+position = Vector2(146, -36)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="EagleTrigger" type="Area2D" parent="." unique_id=223034794]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EagleTrigger" unique_id=233392660]
+position = Vector2(4.5, -61.5)
+shape = SubResource("RectangleShape2D_sita2")
+
+[connection signal="body_entered" from="Eagle/EagleHitbox" to="." method="_on_eagle_hitbox_body_entered"]
+[connection signal="body_entered" from="EagleTrigger" to="." method="_on_eagle_trigger_body_entered"]
