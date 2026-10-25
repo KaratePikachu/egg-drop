@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://do6lsa0ga8dpo" path="res://assets/egg/umbrella open.PNG" id="5_fn24r"]
 [ext_resource type="Texture2D" uid="uid://cml1ce7bc04g" path="res://assets/egg/umbrella closed.PNG" id="6_8acdo"]
 [ext_resource type="Texture2D" uid="uid://dqsypqrvcmp7l" path="res://assets/egg/egg.PNG" id="7_j3bdp"]
+[ext_resource type="AudioStream" uid="uid://dix1j677rwd88" path="res://assets/sfx/sfx_eggParachute_Open_1.wav" id="8_rk2rd"]
+[ext_resource type="AudioStream" uid="uid://hjwg07iqc48a" path="res://assets/sfx/sfx_eggParachute_Open_2.wav" id="9_ognup"]
+[ext_resource type="AudioStream" uid="uid://7ru6h0eibe1d" path="res://assets/sfx/sfx_eggParachute_Loop.wav" id="10_ognup"]
+[ext_resource type="AudioStream" uid="uid://uwg831lopha2" path="res://assets/sfx/Fan Blow L.wav" id="11_8acdo"]
+[ext_resource type="AudioStream" uid="uid://yo2sm01ck4f" path="res://assets/sfx/Fan Blow R.wav" id="12_j3bdp"]
+[ext_resource type="AudioStream" uid="uid://dceo55j8s3vge" path="res://assets/sfx/Explosion x1.wav" id="13_j3bdp"]
 
 [sub_resource type="Resource" id="Resource_2h7ub"]
 script = ExtResource("2_1neqk")
@@ -64,7 +70,7 @@ gradient = SubResource("Gradient_umx0v")
 
 [node name="Egg" type="CharacterBody2D" unique_id=804795384 groups=["egg"]]
 script = ExtResource("1_umx0v")
-parachute_terminal_velocity = 180.0
+parachute_terminal_velocity = 200.0
 modifications = Array[ExtResource("2_1neqk")]([SubResource("Resource_2h7ub"), SubResource("Resource_u6fx5"), SubResource("Resource_grnsv"), SubResource("Resource_7vm0l"), SubResource("Resource_88ix8"), SubResource("Resource_3d5hr")])
 
 [node name="Egg" type="Sprite2D" parent="." unique_id=2046109628]
@@ -86,3 +92,22 @@ emission_sphere_radius = 80.56
 spread = 180.0
 gravity = Vector2(0, 500)
 initial_velocity_max = 489.52
+
+[node name="SFXUmbrellaOpen" type="AudioStreamPlayer" parent="." unique_id=1920426500]
+stream = ExtResource("8_rk2rd")
+
+[node name="SFXUmbrellaOpen2" type="AudioStreamPlayer" parent="." unique_id=268071496]
+stream = ExtResource("9_ognup")
+
+[node name="SFXUmbrellaWhoosh" type="AudioStreamPlayer" parent="." unique_id=147771389]
+stream = ExtResource("10_ognup")
+volume_db = 6.804
+
+[node name="SFXFanL" type="AudioStreamPlayer" parent="." unique_id=2118047650]
+stream = ExtResource("11_8acdo")
+
+[node name="SFXFanR" type="AudioStreamPlayer" parent="." unique_id=142708386]
+stream = ExtResource("12_j3bdp")
+
+[node name="SFXBomb" type="AudioStreamPlayer" parent="." unique_id=1832244593]
+stream = ExtResource("13_j3bdp")

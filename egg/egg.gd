@@ -1,6 +1,13 @@
 extends CharacterBody2D
 class_name Egg
 
+@onready var SFXUmbrellaOpen = $SFXUmbrellaOpen
+@onready var SFXUmbrellaOpen2 = $SFXUmbrellaOpen2
+@onready var SFXUmbrellaWhoosh = $SFXUmbrellaWhoosh
+@onready var SFXFanL = $SFXFanL
+@onready var SFXFanR = $SFXFanR
+@onready var SFXBomb = $SFXBomb
+
 @export var parachute_terminal_velocity: float
 
 @export var stiffness: float = 10.0
@@ -70,11 +77,15 @@ func deactivate_mod(mod: Modification) -> void:
 		
 	match mod.name:
 		"left_fan":
+			SFXFanL.stop()
 			fan_force -= -10
 		"right_fan":
+			SFXFanR.stop()
 			fan_force -= 10
 		"basic_umbrella":
 			parachute_open = false
+			SFXUmbrellaOpen.play()
+			SFXUmbrellaWhoosh.stop()
 	
 func activate_mod(mod: Modification) -> void:
 	if mod.toggled == true:
@@ -98,11 +109,15 @@ func activate_mod(mod: Modification) -> void:
 	match mod.name:
 		"left_fan":
 			fan_force += -10
+			SFXFanL.play()
 		"right_fan":
 			fan_force += 10
+			SFXFanR.play()
 		"basic_umbrella":
 			parachute_open = true
 			theta = 0
+			SFXUmbrellaOpen2.play()
+			SFXUmbrellaWhoosh.play()
 		"right_bomb":
 			if parachute_open:
 				omega = -8
@@ -111,6 +126,7 @@ func activate_mod(mod: Modification) -> void:
 			else:
 				omega = -3
 				velocity.x += bomb_impulse
+			SFXBomb.play()
 		"left_bomb":
 			
 			if parachute_open:
@@ -120,11 +136,13 @@ func activate_mod(mod: Modification) -> void:
 			else:
 				omega = 3
 				velocity.x -= bomb_impulse
+			SFXBomb.play()
 		"bottom_bomb":
 			if parachute_open:
 				velocity.y = -1200
 			else:
 				velocity.y = -800
+			SFXBomb.play()
 				
 func land() -> void:
 	for mod in modifications:
@@ -150,12 +168,13 @@ func _physics_process(delta: float) -> void:
 			velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 1.5
 	else:
 		if not landed:
-			velocity.y += (600 * delta)
+			velocity.y += (800 * delta)
 	move_and_slide()
 
 func death() -> void:
 	for node in get_children():
-		node.hide()
+		if node is Sprite2D:
+			node.hide()
 	is_dead = true
 	$CPUParticles2D.show()
 	$CPUParticles2D.emitting = true
