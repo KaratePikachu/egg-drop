@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dddb54taxyof4"]
 
 [ext_resource type="Texture2D" uid="uid://btt1bfnl6aatn" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/SharkArt.png" id="1_6ac07"]
-[ext_resource type="Script" path="res://obstacles/boomerang/boomerang.gd" id="1_d5vcm"]
+[ext_resource type="Script" uid="uid://by84ue5mylwim" path="res://obstacles/shark/shark.gd" id="1_d5vcm"]
 [ext_resource type="Texture2D" uid="uid://ugn6c2q0vnag" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/SharkWarningSignArt.png" id="3_7nd8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sita2"]
