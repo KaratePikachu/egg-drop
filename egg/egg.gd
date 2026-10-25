@@ -145,12 +145,14 @@ func activate_mod(mod: Modification) -> void:
 				velocity.y = -800
 			SFXBomb.play()
 				
-func land() -> void:
+func land(died: bool) -> void:
 	for mod in modifications:
 		deactivate_mod(mod)
 	landed = true
 	velocity.x = 0
 	parachute_open = true
+	if died:
+		death()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	var torque = fan_force
