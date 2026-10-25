@@ -1,0 +1,378 @@
+[gd_scene format=3 uid="uid://c7lsue2ua5gif"]
+
+[ext_resource type="PackedScene" uid="uid://cpg0ctscpw0h5" path="res://level/level.tscn" id="1_pbpmq"]
+[ext_resource type="Script" uid="uid://b20x6sfaosegf" path="res://obstacles/shark/shark.gd" id="2_8rsbt"]
+[ext_resource type="Texture2D" uid="uid://ugn6c2q0vnag" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/SharkWarningSignArt.png" id="3_nmqwb"]
+[ext_resource type="Texture2D" uid="uid://btt1bfnl6aatn" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/SharkArt.png" id="4_26go3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sita2"]
+size = Vector2(319, 301)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_087e3"]
+size = Vector2(141, 632)
+
+[node name="Level" unique_id=1976594912 instance=ExtResource("1_pbpmq")]
+
+[node name="Shark2" type="CharacterBody2D" parent="." index="9" unique_id=645416866]
+position = Vector2(-291, 6399)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark2" index="0" unique_id=1683182662]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark2/Warning" index="0" unique_id=552480895]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark2/Warning" index="1" unique_id=1148162266]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark2" index="1" unique_id=262366604]
+
+[node name="SharkArea" type="Area2D" parent="Shark2/Shark" index="0" unique_id=1421676532]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark2/Shark/SharkArea" index="0" unique_id=388825407]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark2/Shark" index="1" unique_id=1663812196]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark3" type="CharacterBody2D" parent="." index="10" unique_id=566729418]
+position = Vector2(71, 6399)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark3" index="0" unique_id=1354196785]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark3/Warning" index="0" unique_id=87733343]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark3/Warning" index="1" unique_id=1643212961]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark3" index="1" unique_id=1159156963]
+
+[node name="SharkArea" type="Area2D" parent="Shark3/Shark" index="0" unique_id=1445007324]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark3/Shark/SharkArea" index="0" unique_id=685553012]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark3/Shark" index="1" unique_id=1308782518]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark4" type="CharacterBody2D" parent="." index="11" unique_id=2114719284]
+position = Vector2(437, 6399)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark4" index="0" unique_id=823445186]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark4/Warning" index="0" unique_id=946885018]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark4/Warning" index="1" unique_id=2140513584]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark4" index="1" unique_id=577928587]
+
+[node name="SharkArea" type="Area2D" parent="Shark4/Shark" index="0" unique_id=882404625]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark4/Shark/SharkArea" index="0" unique_id=17824011]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark4/Shark" index="1" unique_id=523804415]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark5" type="CharacterBody2D" parent="." index="12" unique_id=655064897]
+position = Vector2(803, 6403)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark5" index="0" unique_id=1989356702]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark5/Warning" index="0" unique_id=986926341]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark5/Warning" index="1" unique_id=520069142]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark5" index="1" unique_id=802435433]
+
+[node name="SharkArea" type="Area2D" parent="Shark5/Shark" index="0" unique_id=141404199]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark5/Shark/SharkArea" index="0" unique_id=1671747781]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark5/Shark" index="1" unique_id=96495919]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark6" type="CharacterBody2D" parent="." index="13" unique_id=1962131958]
+position = Vector2(1162, 6403)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark6" index="0" unique_id=1195915016]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark6/Warning" index="0" unique_id=1993771499]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark6/Warning" index="1" unique_id=2112918256]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark6" index="1" unique_id=58893747]
+
+[node name="SharkArea" type="Area2D" parent="Shark6/Shark" index="0" unique_id=1847801233]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark6/Shark/SharkArea" index="0" unique_id=603976495]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark6/Shark" index="1" unique_id=1164095047]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark7" type="CharacterBody2D" parent="." index="14" unique_id=100115109]
+position = Vector2(1524, 6403)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark7" index="0" unique_id=1690645712]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark7/Warning" index="0" unique_id=1330111188]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark7/Warning" index="1" unique_id=30633022]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark7" index="1" unique_id=759280658]
+
+[node name="SharkArea" type="Area2D" parent="Shark7/Shark" index="0" unique_id=1941442832]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark7/Shark/SharkArea" index="0" unique_id=1558728082]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark7/Shark" index="1" unique_id=588484776]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark8" type="CharacterBody2D" parent="." index="15" unique_id=1425116332]
+position = Vector2(1890, 6403)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark8" index="0" unique_id=196107424]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark8/Warning" index="0" unique_id=161075522]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark8/Warning" index="1" unique_id=1522829504]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark8" index="1" unique_id=459016313]
+
+[node name="SharkArea" type="Area2D" parent="Shark8/Shark" index="0" unique_id=327927439]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark8/Shark/SharkArea" index="0" unique_id=1595690132]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark8/Shark" index="1" unique_id=1728101325]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark9" type="CharacterBody2D" parent="." index="16" unique_id=1842304190]
+position = Vector2(-640, 7287)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark9" index="0" unique_id=957591050]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark9/Warning" index="0" unique_id=85473268]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark9/Warning" index="1" unique_id=1905327687]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark9" index="1" unique_id=1740910711]
+
+[node name="SharkArea" type="Area2D" parent="Shark9/Shark" index="0" unique_id=1707911417]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark9/Shark/SharkArea" index="0" unique_id=1416478403]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark9/Shark" index="1" unique_id=503381479]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark10" type="CharacterBody2D" parent="." index="17" unique_id=1773434453]
+position = Vector2(-278, 7287)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark10" index="0" unique_id=749068849]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark10/Warning" index="0" unique_id=2012594771]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark10/Warning" index="1" unique_id=435510292]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark10" index="1" unique_id=1841736548]
+
+[node name="SharkArea" type="Area2D" parent="Shark10/Shark" index="0" unique_id=2084370595]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark10/Shark/SharkArea" index="0" unique_id=2066651086]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark10/Shark" index="1" unique_id=805095126]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark11" type="CharacterBody2D" parent="." index="18" unique_id=1700577563]
+position = Vector2(88, 7287)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark11" index="0" unique_id=1887416192]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark11/Warning" index="0" unique_id=612491810]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark11/Warning" index="1" unique_id=718415662]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark11" index="1" unique_id=996625693]
+
+[node name="SharkArea" type="Area2D" parent="Shark11/Shark" index="0" unique_id=2062327105]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark11/Shark/SharkArea" index="0" unique_id=1173066343]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark11/Shark" index="1" unique_id=1219874125]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[node name="Shark12" type="CharacterBody2D" parent="." index="19" unique_id=1435884445]
+position = Vector2(454, 7291)
+script = ExtResource("2_8rsbt")
+jump_duration = 0.4
+
+[node name="Warning" type="Area2D" parent="Shark12" index="0" unique_id=1523854423]
+position = Vector2(0, -3987)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark12/Warning" index="0" unique_id=597212568]
+position = Vector2(-3, -10)
+shape = SubResource("RectangleShape2D_sita2")
+
+[node name="SharkWarning" type="Sprite2D" parent="Shark12/Warning" index="1" unique_id=197996964]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_nmqwb")
+
+[node name="Shark" type="StaticBody2D" parent="Shark12" index="1" unique_id=771922348]
+
+[node name="SharkArea" type="Area2D" parent="Shark12/Shark" index="0" unique_id=835121844]
+position = Vector2(7, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark12/Shark/SharkArea" index="0" unique_id=2130235556]
+position = Vector2(-3, 11)
+scale = Vector2(2.2400017, 1)
+shape = SubResource("RectangleShape2D_087e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shark12/Shark" index="1" unique_id=1228877957]
+position = Vector2(27, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_26go3")
+
+[connection signal="body_entered" from="Shark2/Warning" to="Shark2" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark2/Shark/SharkArea" to="Shark2" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark3/Warning" to="Shark3" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark3/Shark/SharkArea" to="Shark3" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark4/Warning" to="Shark4" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark4/Shark/SharkArea" to="Shark4" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark5/Warning" to="Shark5" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark5/Shark/SharkArea" to="Shark5" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark6/Warning" to="Shark6" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark6/Shark/SharkArea" to="Shark6" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark7/Warning" to="Shark7" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark7/Shark/SharkArea" to="Shark7" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark8/Warning" to="Shark8" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark8/Shark/SharkArea" to="Shark8" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark9/Warning" to="Shark9" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark9/Shark/SharkArea" to="Shark9" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark10/Warning" to="Shark10" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark10/Shark/SharkArea" to="Shark10" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark11/Warning" to="Shark11" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark11/Shark/SharkArea" to="Shark11" method="_on_shark_area_body_entered"]
+[connection signal="body_entered" from="Shark12/Warning" to="Shark12" method="_on_warning_body_entered"]
+[connection signal="body_entered" from="Shark12/Shark/SharkArea" to="Shark12" method="_on_shark_area_body_entered"]
