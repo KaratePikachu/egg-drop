@@ -78,6 +78,7 @@ theme_override_font_sizes/font_size = 144
 text = "Quit"
 
 [node name="LevelSelect" type="TextureRect" parent="." unique_id=1381461158]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,6 +140,10 @@ level_num = 5
 [node name="LevelButton6" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=2080451894 instance=ExtResource("2_mu8pm")]
 layout_mode = 2
 level_num = 6
+
+[node name="LevelButton7" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=1424587773 instance=ExtResource("2_mu8pm")]
+layout_mode = 2
+level_num = 7
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="value_changed" from="MainMenu/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

@@ -18,6 +18,7 @@ static var levels : Array[String] = [
 	"res://level/levels/level_4.tscn",
 	"res://level/levels/level_5.tscn",
 	"res://level/levels/level_6.tscn",
+	"res://level/levels/level_7.tscn"
 	
 ]
 @export var level_number : int
@@ -160,6 +161,8 @@ func restart_level() -> void:
 	get_tree().reload_current_scene()
 
 static func load_level(level_num : int) -> void:
+	#if Song.type == Song.Type.MM:
+		#Song.play_level()
 	entering_new_level = true
 	SceneChanger.change_to_file(levels[level_num-1])
 #endregion

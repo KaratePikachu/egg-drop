@@ -6,6 +6,7 @@ static var go_to_level_select : bool = false
 @onready var main_menu : Control = $MainMenu
 @onready var level_select : Control = $LevelSelect
 func _ready() -> void:
+	level_select.hide()
 	if go_to_level_select:
 		go_to_level_select = false
 		_on_start_pressed()
