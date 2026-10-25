@@ -5,14 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://cvv8xnyxwur3o" path="res://egg/egg.tscn" id="2_ktfr2"]
 [ext_resource type="PackedScene" uid="uid://b4gxj00g4y8o4" path="res://egg/dummy_egg.tscn" id="2_vkbyq"]
 [ext_resource type="PackedScene" uid="uid://b86ir38reinvl" path="res://ui/level_end/level_end.tscn" id="3_44x8d"]
-[ext_resource type="Texture2D" uid="uid://cvbm652v6jwfp" path="res://test/ruler-icon-28.png" id="3_qohg2"]
+[ext_resource type="Texture2D" uid="uid://bgp4wj4ips88u" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/BrickBGTileArt.png" id="6_0v1st"]
 [ext_resource type="AudioStream" uid="uid://bajbi2k7gnb12" path="res://assets/music/egg theme.ogg" id="6_44x8d"]
+[ext_resource type="Texture2D" uid="uid://dqdkytms3lftm" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/ConcreteTileMiddleArt.png" id="7_6gtgk"]
+[ext_resource type="Texture2D" uid="uid://ds1v5qqdajjvx" path="res://assets/StudentBodyArt.png" id="9_cw150"]
+[ext_resource type="Texture2D" uid="uid://ddncc2hafs5cx" path="res://assets/StudentArmsArt.png" id="10_xii2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4td4"]
 size = Vector2(4696, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gx2l"]
 size = Vector2(4376, 87)
+
+[sub_resource type="Gradient" id="Gradient_cw150"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sita2"]
+gradient = SubResource("Gradient_cw150")
 
 [node name="Level" type="Node2D" unique_id=1976594912 node_paths=PackedStringArray("win_floor")]
 script = ExtResource("1_7lnir")
@@ -21,7 +31,7 @@ egg_scene = ExtResource("2_ktfr2")
 end_screen = ExtResource("3_44x8d")
 
 [node name="DummyEgg" parent="." unique_id=1402220803 instance=ExtResource("2_vkbyq")]
-position = Vector2(500, 300)
+position = Vector2(487, 677.49976)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=380594531]
 position = Vector2(540, 3000)
@@ -52,14 +62,49 @@ shape = SubResource("RectangleShape2D_r4td4")
 position = Vector2(540, -43.5)
 shape = SubResource("RectangleShape2D_5gx2l")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=719334636]
-position = Vector2(1116, 1264)
-scale = Vector2(5.015625, 5.015625)
-texture = ExtResource("3_qohg2")
+[node name="Concrete2" type="Sprite2D" parent="WinFloor" unique_id=663939093]
+z_index = -1
+position = Vector2(532, 139)
+scale = Vector2(10.773437, 0.9609376)
+texture = ExtResource("7_6gtgk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=321153488]
 stream = ExtResource("6_44x8d")
 autoplay = true
 parameters/looping = true
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=923166385]
+z_index = -2
+repeat_size = Vector2(256, 256)
+repeat_times = 400
+ignore_camera_scroll = true
+
+[node name="Brick" type="Sprite2D" parent="Parallax2D" unique_id=1760116541]
+z_index = -5
+position = Vector2(-248, 50000)
+texture = ExtResource("6_0v1st")
+
+[node name="Concrete" type="Sprite2D" parent="." unique_id=976776791]
+z_index = -1
+position = Vector2(531.99994, 821)
+scale = Vector2(10.773437, 0.9609376)
+texture = ExtResource("7_6gtgk")
+
+[node name="StudentBodyArt" type="Sprite2D" parent="." unique_id=1271386608]
+z_index = -2
+position = Vector2(542, 310.5)
+scale = Vector2(5.3398438, 5.029297)
+texture = ExtResource("9_cw150")
+
+[node name="StudentArmsArt" type="Sprite2D" parent="." unique_id=2040328053]
+position = Vector2(527, 340.49976)
+scale = Vector2(4.0234375, 3.9257813)
+texture = ExtResource("10_xii2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=967029778]
+z_index = -3
+position = Vector2(521, 343)
+scale = Vector2(43.0625, 11.71875)
+texture = SubResource("GradientTexture2D_sita2")
 
 [connection signal="body_entered" from="WinFloor/WinArea" to="." method="_on_win_area_body_entered"]
