@@ -16,7 +16,7 @@ position = Vector2(1193, 3129)
 wind_speed = 14.0
 size = Vector2(4000, 1000)
 
-[node name="Wind4" parent="." index="11" unique_id=1339888163 instance=ExtResource("3_nr4ye")]
+[node name="Wind4" parent="." index="10" unique_id=1339888163 instance=ExtResource("3_nr4ye")]
 position = Vector2(1003, 5473)
 wind_speed = -14.0
 size = Vector2(4000, 1000)
@@ -27,25 +27,25 @@ position = Vector2(1418, 1697)
 [node name="FatGuy2" parent="." index="12" unique_id=1166130785 instance=ExtResource("3_se3ff")]
 position = Vector2(-352, 4247)
 
-[node name="Shark" parent="." index="14" unique_id=645416866 instance=ExtResource("4_nr4ye")]
+[node name="Shark" parent="." index="13" unique_id=645416866 instance=ExtResource("4_nr4ye")]
 position = Vector2(-66, 9636)
 
 [node name="Warning" parent="Shark" index="0" unique_id=1683182662]
 position = Vector2(0, -1192)
 
-[node name="Shark2" parent="." index="15" unique_id=659363705 instance=ExtResource("4_nr4ye")]
+[node name="Shark2" parent="." index="14" unique_id=659363705 instance=ExtResource("4_nr4ye")]
 position = Vector2(1199, 9636)
 
 [node name="Warning" parent="Shark2" index="0" unique_id=1683182662]
 position = Vector2(0, -1192)
 
-[node name="Shark3" parent="." index="16" unique_id=2020994280 instance=ExtResource("4_nr4ye")]
+[node name="Shark3" parent="." index="15" unique_id=2020994280 instance=ExtResource("4_nr4ye")]
 position = Vector2(327, 6971)
 
 [node name="Shark" parent="Shark3" index="1" unique_id=262366604]
 position = Vector2(0, 2665)
 
-[node name="Shark4" parent="." index="17" unique_id=61891728 instance=ExtResource("4_nr4ye")]
+[node name="Shark4" parent="." index="16" unique_id=61891728 instance=ExtResource("4_nr4ye")]
 position = Vector2(716, 6971)
 
 [node name="Shark" parent="Shark4" index="1" unique_id=262366604]
