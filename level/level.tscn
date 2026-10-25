@@ -32,6 +32,10 @@ position_smoothing_enabled = true
 
 [node name="ModificationMenu" parent="CanvasLayer" unique_id=961803805 instance=ExtResource("2_5gx2l")]
 
+[node name="LevelEnd" parent="CanvasLayer" unique_id=994034770 node_paths=PackedStringArray("level") instance=ExtResource("3_44x8d")]
+visible = false
+level = NodePath("../..")
+
 [node name="WinFloor" type="Node2D" parent="." unique_id=1248466689]
 position = Vector2(0, 6000)
 

@@ -10,7 +10,10 @@ enum Phase{
 
 static var entering_new_level : bool = true
 static var active_modifications : Array[Modification]
-static var levels : Array[String]
+static var levels : Array[String] = [
+	"res://level/levels/level_1.tscn",
+	
+]
 @export var level_number : int
 var win_floor_y : float
 
@@ -140,17 +143,15 @@ static func load_level(level_num : int) -> void:
 
 
 func _on_win_area_body_entered(body: Node2D) -> void:
-	
 	if body != egg:
 		return
 		
-	var screen: EndScreen = end_screen.instantiate()
 	
 	if egg.velocity.y <= egg.parachute_terminal_velocity + 10:
-		screen.did_win = true
+		$CanvasLayer/LevelEnd.did_win = true
 	else:
-		screen.did_win = false
+		$CanvasLayer/LevelEnd.did_win = false
 	
-	add_child(screen)
+	$CanvasLayer/LevelEnd.appear()
 	
 	egg.land()
