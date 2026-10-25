@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b5fknl24w6u7h"]
+
+[ext_resource type="Texture2D" uid="uid://b62uwtpr65em7" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/FrogArt.png" id="1_e5jo7"]
+[ext_resource type="Script" uid="uid://c8igowqbth773" path="res://obstacles/frog/frog.gd" id="1_qeo22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeo22"]
+size = Vector2(32, 94)
+
+[node name="Frog" type="Node2D" unique_id=1310900993]
+script = ExtResource("1_qeo22")
+swing_freq = 2.0
+swing_amp = 65.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1110597709]
+rotation = -0.99337786
+
+[node name="FrogArt" type="Sprite2D" parent="Node2D" unique_id=1486253729]
+position = Vector2(10.563199, 71.89867)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_e5jo7")
+
+[node name="Area2D" type="Area2D" parent="Node2D/FrogArt" unique_id=1309205133]
+position = Vector2(2, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/FrogArt/Area2D" unique_id=1686616891]
+shape = SubResource("RectangleShape2D_qeo22")
+
+[connection signal="body_entered" from="Node2D/FrogArt/Area2D" to="." method="_on_area_2d_body_entered"]
