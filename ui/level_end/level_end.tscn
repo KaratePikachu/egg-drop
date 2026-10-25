@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://b86ir38reinvl"]
 
+[ext_resource type="Theme" uid="uid://dftu4qxd8px1u" path="res://new_theme.tres" id="1_4acnr"]
 [ext_resource type="Script" uid="uid://d3lxmet0ynqpk" path="res://ui/level_end/level_end.gd" id="1_bk64s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lnir"]
+bg_color = Color(0.61970025, 0.24652845, 0, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.49803922, 0.19215687, 0, 1)
+corner_radius_top_left = 70
+corner_radius_top_right = 70
+corner_radius_bottom_right = 70
+corner_radius_bottom_left = 70
 
 [node name="LevelEnd" type="Control" unique_id=994034770]
 layout_mode = 3
@@ -9,34 +22,65 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_4acnr")
 script = ExtResource("1_bk64s")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=714215588]
-layout_mode = 0
-offset_left = 489.0
-offset_top = 792.0
-offset_right = 588.0
-offset_bottom = 920.0
+[node name="Panel" type="PanelContainer" parent="." unique_id=1054911228]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -382.5
+offset_top = -482.5
+offset_right = 382.5
+offset_bottom = 482.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7lnir")
 
-[node name="Status" type="Label" parent="VBoxContainer" unique_id=737844133]
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2094698394]
 layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=714215588]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Status" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=737844133]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
 text = "You did it!"
+horizontal_alignment = 1
 
-[node name="Retry" type="Button" parent="VBoxContainer" unique_id=2059917416]
+[node name="Retry" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=2059917416]
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
 text = "Retry
 "
 
-[node name="Next Level" type="Button" parent="VBoxContainer" unique_id=3358179]
+[node name="Next Level" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=3358179]
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
 text = "Next Level
 "
 
-[node name="Level Select" type="Button" parent="VBoxContainer" unique_id=2128158893]
+[node name="Level Select" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=2128158893]
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
 text = "Level Select
 "
 
-[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="VBoxContainer/Next Level" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Next Level" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]

@@ -5,9 +5,13 @@ class_name EndScreen
 @export var did_win: bool
 
 func _ready() -> void:
+	hide()
+
+func appear() -> void:
+	show()
 	if not did_win:
-		$"VBoxContainer/Next Level".queue_free()
-		$VBoxContainer/Status.text = "Try Again!"
+		$"Panel/MarginContainer/VBoxContainer/Next Level".queue_free()
+		$Panel/MarginContainer/VBoxContainer/Status.text = "Try Again!"
 
 func _on_retry_pressed() -> void:
 	get_tree().reload_current_scene()
