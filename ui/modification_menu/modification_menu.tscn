@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://xwnwd7qpbs56"]
 
-[ext_resource type="Texture2D" uid="uid://bq1kxrxmub3qq" path="res://icon.svg" id="1_nihoe"]
 [ext_resource type="Script" uid="uid://natc6t5n5swh" path="res://ui/modification_menu/modification_menu.gd" id="1_sueqx"]
 [ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="2_n13yq"]
 [ext_resource type="PackedScene" uid="uid://47sdh7xrojlf" path="res://ui/modification_menu/modification_button.tscn" id="3_osh7i"]
@@ -10,9 +9,8 @@
 [ext_resource type="Resource" uid="uid://dlq1a7ynkyayw" path="res://modifications/left_bomb.tres" id="6_b75t7"]
 [ext_resource type="Resource" uid="uid://chlm4yeoshec8" path="res://modifications/right_bomb.tres" id="7_o3o0r"]
 [ext_resource type="Resource" uid="uid://ci36330mr8egl" path="res://modifications/bottom_bomb.tres" id="8_f7k5d"]
-[ext_resource type="Texture2D" uid="uid://do6lsa0ga8dpo" path="res://assets/egg/umbrella open.PNG" id="11_x8ro7"]
-[ext_resource type="Texture2D" uid="uid://dt20pli5xfy13" path="res://assets/egg/right fan 1.PNG" id="12_b75t7"]
-[ext_resource type="Texture2D" uid="uid://d27e3o1y5su4c" path="res://assets/egg/left fan 1.PNG" id="13_o3o0r"]
+[ext_resource type="Texture2D" uid="uid://dqsypqrvcmp7l" path="res://assets/egg/egg.PNG" id="9_qir6i"]
+[ext_resource type="Theme" uid="uid://dftu4qxd8px1u" path="res://new_theme.tres" id="10_qir6i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lnir"]
 bg_color = Color(0.61970025, 0.24652845, 0, 1)
@@ -111,7 +109,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [560.0, 1080.0]
+"values": [782.328, 1080.0]
 }
 
 [sub_resource type="Animation" id="Animation_sueqx"]
@@ -128,7 +126,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1080.0, 560.0]
+"values": [1080.0, 782.328]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_osh7i"]
@@ -153,24 +151,25 @@ available_mods = Array[ExtResource("2_n13yq")]([ExtResource("3_qir6i"), ExtResou
 [node name="SlidingArea" type="Control" parent="." unique_id=1819905087]
 layout_mode = 1
 anchor_left = 0.5925926
-anchor_top = 0.23666666
+anchor_top = 0.08
 anchor_right = 1.0000001
-anchor_bottom = 0.72999996
+anchor_bottom = 0.73
 offset_left = 440.0
-offset_right = 440.00012
+offset_top = 108.0
+offset_right = 440.00122
+offset_bottom = 108.0
 grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+grow_vertical = 0
 
 [node name="Tab" type="Button" parent="SlidingArea" unique_id=932624111]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -127.99994
-offset_top = 48.0
-offset_right = -344.00024
-offset_bottom = -944.0
+offset_left = -128.0
+offset_top = 60.0
+offset_right = -344.0003
+offset_bottom = -1236.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_7lnir")
@@ -185,22 +184,23 @@ anchor_left = 0.116000004
 anchor_top = 0.208
 anchor_right = 0.56200004
 anchor_bottom = 0.79200006
-offset_left = 0.015863419
-offset_top = 0.06400299
-offset_right = 0.11185455
-offset_bottom = -0.06401062
+offset_left = -24.3122
+offset_top = -126.91201
+offset_right = 19.783333
+offset_bottom = 38.911987
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_nihoe")
+texture = ExtResource("9_qir6i")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="SlidingArea" unique_id=1903627951]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.182
-anchor_bottom = 1.0
-offset_right = -0.080444336
+anchor_right = 0.68600005
+anchor_bottom = 0.892
+offset_right = 0.15963745
+offset_bottom = 0.47998047
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7lnir")
@@ -219,33 +219,41 @@ theme_override_constants/margin_bottom = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SlidingArea/Panel/MarginContainer" unique_id=2136777391]
 layout_mode = 2
+theme_override_constants/separation = 25
 
 [node name="Label" type="Label" parent="SlidingArea/Panel/MarginContainer/VBoxContainer" unique_id=706647224]
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 54
 text = "Egg
-Modifications"
+Mods"
 horizontal_alignment = 1
 
-[node name="Modifications" type="GridContainer" parent="SlidingArea/Panel/MarginContainer/VBoxContainer" unique_id=1115105343]
+[node name="Modifications" type="VBoxContainer" parent="SlidingArea/Panel/MarginContainer/VBoxContainer" unique_id=93536018]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("10_qir6i")
+theme_override_constants/separation = 30
 
 [node name="ModificationButton" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1716547921 instance=ExtResource("3_osh7i")]
+custom_maximum_size = Vector2(-1, -1)
 layout_mode = 2
-icon = ExtResource("11_x8ro7")
 modification = ExtResource("3_qir6i")
 
 [node name="ModificationButton2" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1236014988 instance=ExtResource("3_osh7i")]
 layout_mode = 2
-icon = ExtResource("12_b75t7")
-modification = ExtResource("5_x8ro7")
+modification = ExtResource("4_1c5mp")
 
 [node name="ModificationButton3" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=782207886 instance=ExtResource("3_osh7i")]
 layout_mode = 2
-icon = ExtResource("13_o3o0r")
-modification = ExtResource("4_1c5mp")
+modification = ExtResource("5_x8ro7")
+
+[node name="ModificationButton4" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1183534853 instance=ExtResource("3_osh7i")]
+layout_mode = 2
+
+[node name="ModificationButton5" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1027494099 instance=ExtResource("3_osh7i")]
+layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=52377448]
 libraries/ = SubResource("AnimationLibrary_osh7i")
@@ -256,6 +264,7 @@ offset_left = 206.0
 offset_top = 1904.0
 offset_right = 928.0
 offset_bottom = 2134.0
+theme = ExtResource("10_qir6i")
 text = "Drop"
 
 [connection signal="pressed" from="SlidingArea/Tab" to="." method="_on_tab_pressed"]

@@ -22,8 +22,7 @@ position = Vector2(500, 100)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=380594531]
 position = Vector2(540, 1)
-limit_top = 0
-limit_bottom = 2500
+limit_enabled = false
 position_smoothing_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1883544062]
@@ -31,7 +30,7 @@ position_smoothing_enabled = true
 [node name="ModificationMenu" parent="CanvasLayer" unique_id=961803805 instance=ExtResource("2_5gx2l")]
 
 [node name="WinFloor" type="Node2D" parent="." unique_id=1248466689]
-position = Vector2(0, 2200)
+position = Vector2(0, 2300)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WinFloor" unique_id=1091035354]
 

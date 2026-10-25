@@ -2,7 +2,7 @@
 extends Control
 class_name ModificationMenu
 
-@export var mod_button_container : GridContainer
+@export var mod_button_container : VBoxContainer
 @export var available_mods : Array[Modification]
 
 var mod_menu_out : bool = false

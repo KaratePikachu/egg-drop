@@ -1,11 +1,36 @@
 [gd_scene format=3 uid="uid://47sdh7xrojlf"]
 
 [ext_resource type="Script" uid="uid://bax58odohq4u4" path="res://ui/modification_menu/modification_button.gd" id="1_6rt2e"]
+[ext_resource type="Texture2D" uid="uid://dqsypqrvcmp7l" path="res://assets/egg/egg.PNG" id="2_qxn8c"]
 
 [node name="ModificationButton" type="Button" unique_id=1716547921]
 custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(200, 200)
 size_flags_horizontal = 4
 toggle_mode = true
 script = ExtResource("1_6rt2e")
+
+[node name="Egg" type="TextureRect" parent="." unique_id=86796061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_qxn8c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1982975492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="toggled" from="." to="." method="_on_toggled"]

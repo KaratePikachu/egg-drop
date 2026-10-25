@@ -30,11 +30,15 @@ static var dummy_egg: DummyEgg
 var egg: Egg = null
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	
 	dummy_egg = $DummyEgg
 	dummy_egg.set_modifications(active_modifications)
 	win_floor_y = win_floor.position.y
 	camera_min_y = 0.5*camera.get_viewport_rect().size.y
 	camera_max_y = win_floor_y-0.5*camera.get_viewport_rect().size.y + 100
+	print(camera_min_y, " ",camera_max_y)
 	
 	mod_menu.drop_pressed.connect(start_drop)
 	
@@ -74,9 +78,9 @@ func _input(event: InputEvent) -> void:
 	match current_phase:
 		Phase.MODIFY:
 			if event.is_action_pressed("scroll_up"):
-				move_camera(-50)
+				move_camera(-100)
 			elif event.is_action_pressed("scroll_down"):
-				move_camera(50)
+				move_camera(100)
 			elif event.is_action_pressed("pan"):
 				panning = true
 			elif event.is_action_released("pan"):
