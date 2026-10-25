@@ -16,14 +16,9 @@ position = Vector2(1193, 3129)
 wind_speed = 14.0
 size = Vector2(4000, 1000)
 
-<<<<<<< Updated upstream
-[node name="Wind2" parent="." index="10" unique_id=611723576 instance=ExtResource("3_nr4ye")]
-position = Vector2(-118, 5356)
-=======
 [node name="Wind4" parent="." index="11" unique_id=1339888163 instance=ExtResource("3_nr4ye")]
 position = Vector2(1003, 5473)
 wind_speed = -14.0
->>>>>>> Stashed changes
 size = Vector2(4000, 1000)
 
 [node name="FatGuy" parent="." index="11" unique_id=2111557991 instance=ExtResource("3_se3ff")]
