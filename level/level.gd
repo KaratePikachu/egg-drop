@@ -13,7 +13,8 @@ static var entering_new_level : bool = false
 static var active_modifications : Array[Modification]
 static var levels : Array[String] = [
 	"res://level/levels/level_1.tscn",
-
+	"res://level/levels/level_2.tscn",
+	"res://level/levels/level_3.tscn"
 ]
 @export var level_number : int
 var win_floor_y : float
@@ -164,8 +165,8 @@ func _on_win_area_body_entered(body: Node2D) -> void:
 		return
 		
 	
-	print(egg.velocity.y," ",egg.parachute_terminal_velocity + 10)
-	if egg.velocity.y <= egg.parachute_terminal_velocity + 10:
+	#print(egg.velocity.y," ",egg.parachute_terminal_velocity + )
+	if egg.velocity.y <= egg.parachute_terminal_velocity + 1000:
 		$CanvasLayer/LevelEnd.appear()
 	else:
 		egg.death()

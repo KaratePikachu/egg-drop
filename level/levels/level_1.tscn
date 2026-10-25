@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cpg0ctscpw0h5" path="res://level/level.tscn" id="1_roo1r"]
 [ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="2_35gx7"]
 [ext_resource type="Resource" uid="uid://b36e0deyggd1c" path="res://modifications/basic_umbrella.tres" id="3_wg4fv"]
-[ext_resource type="Resource" uid="uid://c42aj75jikx0v" path="res://modifications/left_fan.tres" id="4_blww0"]
-[ext_resource type="Resource" uid="uid://cl2eps1bbxd0l" path="res://modifications/right_fan.tres" id="5_lemno"]
 
 [node name="Level1" unique_id=1976594912 instance=ExtResource("1_roo1r")]
 level_number = 1
@@ -13,7 +11,7 @@ level_number = 1
 position_smoothing_speed = 100.0
 
 [node name="ModificationMenu" parent="CanvasLayer" parent_id_path=PackedInt32Array(1883544062) index="0" unique_id=961803805]
-available_mods = Array[ExtResource("2_35gx7")]([ExtResource("3_wg4fv"), ExtResource("4_blww0"), ExtResource("5_lemno")])
+available_mods = Array[ExtResource("2_35gx7")]([ExtResource("3_wg4fv")])
 
 [node name="WinFloor" parent="." index="3" unique_id=1248466689]
-position = Vector2(0, 10000)
+position = Vector2(0, 7000)
