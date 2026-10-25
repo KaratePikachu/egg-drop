@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cm0quh088qlh5" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/MafiaGuyArmArt.png" id="2_kf13i"]
 [ext_resource type="Texture2D" uid="uid://cx5456p00yj0m" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/MafiaGuyCrosshairArt.png" id="3_hf7er"]
 [ext_resource type="Texture2D" uid="uid://b4patidg6q410" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/EmptyWindowArt.png" id="4_u5v5p"]
+[ext_resource type="AudioStream" uid="uid://da5pq717dv4wv" path="res://assets/sfx/sfx_MafiGunShoot_End.wav" id="6_u5v5p"]
+[ext_resource type="AudioStream" uid="uid://uvle1lrixtmj" path="res://assets/sfx/sfx_MafiGunShoot_Reload.wav" id="7_yvybb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kfoe6"]
 radius = 78.05767
@@ -38,3 +40,9 @@ shape = SubResource("CircleShape2D_kfoe6")
 [node name="MafiaGuyCrosshairArt" type="Sprite2D" parent="Crosshair" unique_id=680431448]
 position = Vector2(-3, 12)
 texture = ExtResource("3_hf7er")
+
+[node name="SFXGunshot" type="AudioStreamPlayer" parent="." unique_id=1807541759]
+stream = ExtResource("6_u5v5p")
+
+[node name="SFXReload" type="AudioStreamPlayer" parent="." unique_id=1824296461]
+stream = ExtResource("7_yvybb")

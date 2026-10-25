@@ -7,6 +7,7 @@ class_name Egg
 @onready var SFXFanL = $SFXFanL
 @onready var SFXFanR = $SFXFanR
 @onready var SFXBomb = $SFXBomb
+@onready var SFXEggCrack = $SFXEggCrack
 
 @export var parachute_terminal_velocity: float
 
@@ -128,7 +129,6 @@ func activate_mod(mod: Modification) -> void:
 				velocity.x += bomb_impulse
 			SFXBomb.play()
 		"left_bomb":
-			
 			if parachute_open:
 				omega = 8
 				theta = 0.5
@@ -152,7 +152,6 @@ func land() -> void:
 	parachute_open = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-
 	var torque = fan_force
 	var omega_accel = torque
 	if parachute_open:
@@ -176,6 +175,7 @@ func death() -> void:
 		if node is Sprite2D:
 			node.hide()
 	is_dead = true
+	SFXEggCrack.play()
 	$CPUParticles2D.show()
 	$CPUParticles2D.emitting = true
 	await $CPUParticles2D.finished

@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://uwg831lopha2" path="res://assets/sfx/Fan Blow L.wav" id="11_8acdo"]
 [ext_resource type="AudioStream" uid="uid://yo2sm01ck4f" path="res://assets/sfx/Fan Blow R.wav" id="12_j3bdp"]
 [ext_resource type="AudioStream" uid="uid://dceo55j8s3vge" path="res://assets/sfx/Explosion x1.wav" id="13_j3bdp"]
+[ext_resource type="AudioStream" uid="uid://cebb8lww2g2oi" path="res://assets/sfx/sfx_eggCrackHard_1.wav" id="14_8pcjj"]
 
 [sub_resource type="Resource" id="Resource_2h7ub"]
 script = ExtResource("2_1neqk")
@@ -111,3 +112,6 @@ stream = ExtResource("12_j3bdp")
 
 [node name="SFXBomb" type="AudioStreamPlayer" parent="." unique_id=1832244593]
 stream = ExtResource("13_j3bdp")
+
+[node name="SFXEggCrack" type="AudioStreamPlayer" parent="." unique_id=1399688222]
+stream = ExtResource("14_8pcjj")

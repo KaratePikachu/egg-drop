@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhe5pw280xwff" path="res://ui/main_menu/level_button.gd" id="1_8a1js"]
 [ext_resource type="Texture2D" uid="uid://bq1kxrxmub3qq" path="res://icon.svg" id="2_rs4s2"]
+[ext_resource type="AudioStream" uid="uid://hcs7sb4jo4sj" path="res://assets/sfx/Select Button x1.wav" id="3_556ik"]
 
 [node name="LevelButton" type="Button" unique_id=1893504828]
 custom_minimum_size = Vector2(300, 300)
@@ -60,5 +61,8 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 124
 text = "X"
 horizontal_alignment = 1
+
+[node name="SFXSelect" type="AudioStreamPlayer" parent="." unique_id=907481383]
+stream = ExtResource("3_556ik")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
