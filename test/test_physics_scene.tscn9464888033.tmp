@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ctoke2wtxl743"]
+
+[ext_resource type="Script" uid="uid://cgkkpoihbsf3s" path="res://test/egg.gd" id="2_2h7ub"]
+[ext_resource type="Texture2D" uid="uid://cvbm652v6jwfp" path="res://test/ruler-icon-28.png" id="3_2h7ub"]
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="3_u6fx5"]
+[ext_resource type="Texture2D" uid="uid://d27e3o1y5su4c" path="res://assets/egg/left fan 1.PNG" id="4_88ix8"]
+[ext_resource type="Texture2D" uid="uid://dqsypqrvcmp7l" path="res://assets/egg/egg.PNG" id="4_u6fx5"]
+[ext_resource type="Texture2D" uid="uid://dt20pli5xfy13" path="res://assets/egg/right fan 1.PNG" id="5_3d5hr"]
+[ext_resource type="Texture2D" uid="uid://do6lsa0ga8dpo" path="res://assets/egg/umbrella open.PNG" id="6_yk20g"]
+
+[sub_resource type="Resource" id="Resource_2h7ub"]
+script = ExtResource("3_u6fx5")
+name = "left_fan"
+icon = ExtResource("4_88ix8")
+input = "left_fan"
+metadata/_custom_type_script = "uid://cylr504fygfq5"
+
+[sub_resource type="Resource" id="Resource_u6fx5"]
+script = ExtResource("3_u6fx5")
+name = "right_fan"
+icon = ExtResource("5_3d5hr")
+input = "right_fan"
+metadata/_custom_type_script = "uid://cylr504fygfq5"
+
+[sub_resource type="Resource" id="Resource_grnsv"]
+script = ExtResource("3_u6fx5")
+name = "basic_umbrella"
+icon = ExtResource("6_yk20g")
+input = "umbrella"
+metadata/_custom_type_script = "uid://cylr504fygfq5"
+
+[node name="TestPhysicsScene" type="Node2D" unique_id=1424677881]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=290957376]
+position = Vector2(1440, 12443)
+scale = Vector2(20.253906, 55.861324)
+texture = ExtResource("3_2h7ub")
+
+[node name="Egg" type="CharacterBody2D" parent="." unique_id=585253029]
+position = Vector2(400, 0)
+script = ExtResource("2_2h7ub")
+parachute_terminal_velocity = 80.0
+modifications = Array[ExtResource("3_u6fx5")]([SubResource("Resource_2h7ub"), SubResource("Resource_u6fx5"), SubResource("Resource_grnsv")])
+
+[node name="Egg" type="Sprite2D" parent="Egg" unique_id=1622334333]
+texture = ExtResource("4_u6fx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg" unique_id=692496194]

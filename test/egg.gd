@@ -22,6 +22,13 @@ func _refresh_mods() -> void:
 	for mod : Modification in modifications:
 		mod.used = false
 		mod.toggled = false
+		if mod.icon_off:
+			var icon := Sprite2D.new()
+			icon.texture = mod.icon_off
+			icon.name = mod.name + "_sprite_off"
+			add_child(icon)
+		if has_node(mod.name + "_sprite"):
+			get_node(mod.name + "_sprite").hide()
 
 func _ready() -> void:
 	_refresh_mods()
@@ -46,6 +53,13 @@ func _input(event: InputEvent) -> void:
 
 func deactivate_mod(mod: Modification) -> void:
 	mod.toggled = false
+	
+	
+	if has_node(mod.name + "_sprite"):
+		get_node(mod.name + "_sprite").hide()
+	if has_node(mod.name + "_sprite_off"):
+		get_node(mod.name + "_sprite_off").show()
+		
 	match mod.name:
 		"left_fan":
 			fan_force -= -5	
@@ -56,6 +70,21 @@ func deactivate_mod(mod: Modification) -> void:
 	
 func activate_mod(mod: Modification) -> void:
 	mod.toggled = true
+	
+	# icon
+	var icon := get_node_or_null(mod.name + "_sprite") as Sprite2D
+	if icon:
+		icon.show()
+	else:
+		icon = Sprite2D.new()
+		icon.texture = mod.icon
+		icon.name = mod.name + "_sprite"
+		add_child(icon)
+		
+	# icon off
+	if has_node(mod.name + "_sprite_off"):
+		get_node(mod.name + "_sprite_off").hide()
+	
 	match mod.name:
 		"left_fan":
 			fan_force += -5	
