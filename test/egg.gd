@@ -5,8 +5,8 @@ class_name Egg
 @export var parachute_terminal_velocity: float
 @export var mass: float = 200
 
-@export var stiffness: float = 20.0
-@export var damping: float = 3
+@export var stiffness: float = 10.0
+@export var damping: float = 5
 
 @export var tilt_factor: float = -5000.0
 @export var drag_x: float = 20.0
@@ -92,6 +92,15 @@ func activate_mod(mod: Modification) -> void:
 			fan_force += 5
 		"basic_umbrella":
 			parachute_open = true
+		"right_bomb":
+			omega = -15
+		"left_bomb":
+			omega = 15
+		"bottom_bomb":
+			if parachute_open:
+				velocity.y = -600
+			else:
+				velocity.y = -300
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -106,7 +115,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x += accel * delta
 
 	if parachute_open:
-		velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 3
+		velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 1.5
 	else:
 		velocity.y += (200 * delta)
 	move_and_slide()
