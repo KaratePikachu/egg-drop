@@ -10,6 +10,6 @@ class_name LevelButton
 		$LevelNum.text = str(level_num)
 	
 func _on_pressed() -> void:
-	SFXSelect.play()
-	await get_tree().create_timer(1.0).timeout
+	SFXSelect.play(0.15)
+	await get_tree().create_timer(0.25).timeout
 	Level.load_level(level_num)
