@@ -100,10 +100,11 @@ func _input(event: InputEvent) -> void:
 				move_camera(100)
 			elif event.is_action_pressed("pan"):
 				panning = true
+				#print("PANANIN")s
 			elif event.is_action_released("pan"):
 				panning = false
 			elif event is InputEventMouseMotion and panning:
-				move_camera(-event.relative.y)
+				move_camera(-event.relative.y/camera.zoom.y)
 		Phase.DROP:
 			pass
 
