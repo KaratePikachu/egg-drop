@@ -15,7 +15,7 @@ var jump_height: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	jump_height = abs(warning.position.y - shark.position.y)
+	jump_height = abs(warning.position.y - shark.position.y) + 50
 	initial_height = shark.position.y
 
 func _trigger_jump() -> void:
