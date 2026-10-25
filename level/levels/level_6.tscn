@@ -14,6 +14,9 @@ size = Vector2(141, 632)
 [node name="Level" unique_id=1976594912 instance=ExtResource("1_pbpmq")]
 level_number = 6
 
+[node name="WinFloor" parent="." index="3" unique_id=1248466689]
+position = Vector2(4, 6000)
+
 [node name="Shark2" type="CharacterBody2D" parent="." index="9" unique_id=645416866]
 position = Vector2(-300, 7175)
 script = ExtResource("2_8rsbt")
