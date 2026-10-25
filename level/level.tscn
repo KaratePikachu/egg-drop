@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cvbm652v6jwfp" path="res://test/ruler-icon-28.png" id="3_qohg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4td4"]
-size = Vector2(1080, 208)
+size = Vector2(4696, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gx2l"]
-size = Vector2(1080, 87)
+size = Vector2(4376, 87)
 
 [node name="Level" type="Node2D" unique_id=1976594912 node_paths=PackedStringArray("win_floor")]
 script = ExtResource("1_7lnir")
@@ -20,10 +20,11 @@ egg_scene = ExtResource("2_ktfr2")
 end_screen = ExtResource("3_44x8d")
 
 [node name="DummyEgg" parent="." unique_id=1402220803 instance=ExtResource("2_vkbyq")]
-position = Vector2(500, 100)
+position = Vector2(500, 300)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=380594531]
-position = Vector2(540, 1)
+position = Vector2(540, 3000)
+zoom = Vector2(0.4, 0.4)
 limit_enabled = false
 position_smoothing_enabled = true
 
@@ -32,7 +33,7 @@ position_smoothing_enabled = true
 [node name="ModificationMenu" parent="CanvasLayer" unique_id=961803805 instance=ExtResource("2_5gx2l")]
 
 [node name="WinFloor" type="Node2D" parent="." unique_id=1248466689]
-position = Vector2(0, 2300)
+position = Vector2(0, 6000)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WinFloor" unique_id=1091035354]
 

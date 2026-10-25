@@ -6,7 +6,7 @@ class_name EndScreen
 
 func _ready() -> void:
 	if not did_win:
-		$"VBoxContainer/Next Level".queue_free()
+		$"Panel/MarginContainer/VBoxContainer/Next Level".queue_free()
 		$VBoxContainer/Status.text = "Try Again!"
 
 func _on_retry_pressed() -> void:
