@@ -14,7 +14,11 @@ static var active_modifications : Array[Modification]
 static var levels : Array[String] = [
 	"res://level/levels/level_1.tscn",
 	"res://level/levels/level_2.tscn",
-	"res://level/levels/level_3.tscn"
+	"res://level/levels/level_3.tscn",
+	"res://level/levels/level_4.tscn",
+	"res://level/levels/level_5.tscn",
+	"res://level/levels/level_6.tscn",
+	
 ]
 @export var level_number : int
 var win_floor_y : float

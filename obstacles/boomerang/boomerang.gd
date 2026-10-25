@@ -41,4 +41,4 @@ func _on_warning_body_entered(body: Node2D) -> void:
 
 func _on_shark_area_body_entered(body: Node2D) -> void:
 	if body is Egg:
-		body.die.emit()
+		body.death()

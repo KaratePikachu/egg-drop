@@ -114,7 +114,7 @@ horizontal_alignment = 1
 [node name="GridContainer" type="GridContainer" parent="LevelSelect/VBoxContainer" unique_id=1531454266]
 layout_mode = 2
 size_flags_horizontal = 4
-columns = 4
+columns = 3
 
 [node name="LevelButton" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=1893504828 instance=ExtResource("2_mu8pm")]
 layout_mode = 2
@@ -127,6 +127,18 @@ level_num = 2
 [node name="LevelButton3" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=40109251 instance=ExtResource("2_mu8pm")]
 layout_mode = 2
 level_num = 3
+
+[node name="LevelButton4" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=1906197535 instance=ExtResource("2_mu8pm")]
+layout_mode = 2
+level_num = 4
+
+[node name="LevelButton5" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=29867766 instance=ExtResource("2_mu8pm")]
+layout_mode = 2
+level_num = 5
+
+[node name="LevelButton6" parent="LevelSelect/VBoxContainer/GridContainer" unique_id=2080451894 instance=ExtResource("2_mu8pm")]
+layout_mode = 2
+level_num = 6
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="value_changed" from="MainMenu/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
