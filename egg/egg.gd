@@ -18,6 +18,8 @@ var parachute_open: bool
 var theta: float = 0.0
 var landed: bool = false
 
+signal die
+
 func _refresh_mods() -> void:
 	for mod : Modification in modifications:
 		mod.used = false

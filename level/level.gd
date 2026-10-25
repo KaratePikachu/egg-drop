@@ -21,8 +21,6 @@ var win_floor_y : float
 
 @export var egg_scene: PackedScene
 
-
-
 var camera_min_y : float
 var camera_max_y : float
 var current_phase : Phase
@@ -47,6 +45,7 @@ func _ready() -> void:
 	print(camera_min_y, " ",camera_max_y)
 	
 	mod_menu.drop_pressed.connect(start_drop)
+	egg.die.connect(lose)
 	
 	if entering_new_level:
 		active_modifications = []
@@ -76,6 +75,9 @@ func start_drop() -> void:
 	mod_menu.queue_free()
 	current_phase = Phase.DROP
 	
+	
+func lose() -> void:
+	print("you lose")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart_level"):
