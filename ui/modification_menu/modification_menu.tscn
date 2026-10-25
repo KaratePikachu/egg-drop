@@ -200,7 +200,7 @@ anchors_preset = -1
 anchor_right = 0.68600005
 anchor_bottom = 0.892
 offset_right = 0.15963745
-offset_bottom = 0.47998047
+offset_bottom = 210.47998
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7lnir")
@@ -251,9 +251,15 @@ modification = ExtResource("5_x8ro7")
 
 [node name="ModificationButton4" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1183534853 instance=ExtResource("3_osh7i")]
 layout_mode = 2
+modification = ExtResource("6_b75t7")
 
 [node name="ModificationButton5" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1027494099 instance=ExtResource("3_osh7i")]
 layout_mode = 2
+modification = ExtResource("7_o3o0r")
+
+[node name="ModificationButton6" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1651476976 instance=ExtResource("3_osh7i")]
+layout_mode = 2
+modification = ExtResource("7_o3o0r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=52377448]
 libraries/ = SubResource("AnimationLibrary_osh7i")
