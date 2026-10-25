@@ -7,6 +7,7 @@ class_name Egg
 @onready var SFXFanL = $SFXFanL
 @onready var SFXFanR = $SFXFanR
 @onready var SFXBomb = $SFXBomb
+@onready var SFXEggCrack = $SFXEggCrack
 
 @export var parachute_terminal_velocity: float
 
@@ -16,6 +17,7 @@ class_name Egg
 @export var tilt_factor: float = -5000.0
 @export var drag_x: float = 20.0
 @export var bomb_impulse: float = 800
+@export var fan_power: float = 10
 
 @export var modifications: Array[Modification]
 
@@ -78,10 +80,10 @@ func deactivate_mod(mod: Modification) -> void:
 	match mod.name:
 		"left_fan":
 			SFXFanL.stop()
-			fan_force -= -10
+			fan_force -= -fan_power
 		"right_fan":
 			SFXFanR.stop()
-			fan_force -= 10
+			fan_force -= fan_power
 		"basic_umbrella":
 			parachute_open = false
 			SFXUmbrellaOpen.play()
@@ -108,10 +110,10 @@ func activate_mod(mod: Modification) -> void:
 	
 	match mod.name:
 		"left_fan":
-			fan_force += -10
+			fan_force += -fan_power
 			SFXFanL.play()
 		"right_fan":
-			fan_force += 10
+			fan_force += fan_power
 			SFXFanR.play()
 		"basic_umbrella":
 			parachute_open = true
@@ -128,7 +130,6 @@ func activate_mod(mod: Modification) -> void:
 				velocity.x += bomb_impulse
 			SFXBomb.play()
 		"left_bomb":
-			
 			if parachute_open:
 				omega = 8
 				theta = 0.5
@@ -144,15 +145,16 @@ func activate_mod(mod: Modification) -> void:
 				velocity.y = -800
 			SFXBomb.play()
 				
-func land() -> void:
+func land(died: bool) -> void:
 	for mod in modifications:
 		deactivate_mod(mod)
 	landed = true
 	velocity.x = 0
 	parachute_open = true
+	if died:
+		death()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-
 	var torque = fan_force
 	var omega_accel = torque
 	if parachute_open:
@@ -176,6 +178,7 @@ func death() -> void:
 		if node is Sprite2D:
 			node.hide()
 	is_dead = true
+	SFXEggCrack.play()
 	$CPUParticles2D.show()
 	$CPUParticles2D.emitting = true
 	await $CPUParticles2D.finished

@@ -1,6 +1,8 @@
 @tool
 extends Area2D
 
+@onready var SFXWind = $SFXWind
+
 @export var collision_shape : CollisionShape2D
 
 @export var wind_speed : float:
@@ -36,8 +38,11 @@ func _update_shape() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Egg:
 		body.fan_force += -wind_speed
+		if not SFXWind.playing:
+			SFXWind.play()
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Egg:
 		body.fan_force -= -wind_speed
+		SFXWind.stop()

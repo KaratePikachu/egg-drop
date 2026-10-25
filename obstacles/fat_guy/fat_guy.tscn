@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdd1efk7g25pi" path="res://obstacles/fat_guy/fat_guy.gd" id="1_3gl2i"]
 [ext_resource type="Texture2D" uid="uid://bh1m6tx1h5rx2" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/NormalWindowArt.png" id="2_3gl2i"]
 [ext_resource type="Texture2D" uid="uid://cpb2ma8qf4v3e" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/FatGuyArt.png" id="2_qjhma"]
+[ext_resource type="AudioStream" uid="uid://ioo41d7m6fl4" path="res://assets/sfx/sfx_FatManFallWindow.wav" id="4_qjhma"]
 
 [sub_resource type="Gradient" id="Gradient_ji5sd"]
 
@@ -46,6 +47,9 @@ position = Vector2(8, 5128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone" unique_id=1751006196]
 shape = SubResource("RectangleShape2D_qjhma")
+
+[node name="SFXFatguyFall" type="AudioStreamPlayer" parent="." unique_id=619349063]
+stream = ExtResource("4_qjhma")
 
 [connection signal="body_entered" from="Sprite2D/Guy/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="DangerZone" to="." method="_on_danger_zone_body_entered"]

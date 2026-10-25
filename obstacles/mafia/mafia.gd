@@ -1,6 +1,9 @@
 extends Node2D
 class_name Mafia
 
+@onready var SFXGunshot = $SFXGunshot
+@onready var SFXReload = $SFXReload
+
 @export var detection_dist : float = 500
 @export var aim_dist : float = 500
 var egg : Egg
@@ -26,7 +29,9 @@ func _process(delta: float) -> void:
 			$Crosshair.global_position = egg.global_position
 			$Crosshair.show()
 			has_ammo = false
+			SFXReload.play()			
 			await get_tree().create_timer(1.0).timeout
+			SFXGunshot.play()			
 			var bodies :Array[Node2D]= $Crosshair.get_overlapping_bodies()
 			if bodies.has(egg):
 				egg.death()

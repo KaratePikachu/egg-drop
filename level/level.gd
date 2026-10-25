@@ -169,4 +169,4 @@ func _on_win_area_body_entered(body: Node2D) -> void:
 	else:
 		egg.death()
 	
-	egg.land()
+	

@@ -3,6 +3,7 @@ extends Node2D
 var fell : bool = false
 var vel : float = 0.0
 @onready var guy :Sprite2D = $Sprite2D/Guy
+@onready var SFXFatguyFall = $SFXFatguyFall
 @export var area_2d: Area2D
 
 #func _ready() -> void:
@@ -17,6 +18,7 @@ func _on_danger_zone_body_entered(body: Node2D) -> void:
 		await tween.finished
 		area_2d.monitoring = true
 		guy.reparent(self)
+		SFXFatguyFall.play()
 		$EmptyWindowArt.texture = preload("res://assets/JamfestFall2027Art/JamfestFall2027Art/BrokenWindowArt.png")
 		tween = get_tree().create_tween()
 		tween.set_trans(Tween.TRANS_QUAD)
