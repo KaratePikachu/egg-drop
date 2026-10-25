@@ -159,10 +159,7 @@ func _physics_process(delta: float) -> void:
 	var omega_accel = torque
 	if parachute_open:
 		omega_accel -= stiffness * theta + damping * omega
-	omega += omega_accel * delta
-	theta += omega * delta
-	rotation = theta
-
+	
 	if parachute_open:
 		var accel = sin(theta) * tilt_factor * 1.5 - drag_x * velocity.x
 		velocity.x += accel * delta
@@ -171,6 +168,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		if not landed:
 			velocity.y += (800 * delta)
+			
+	omega += omega_accel * delta
+	if parachute_open:
+		theta += omega * delta
+	else:
+		theta += omega * delta * 0.2
+	rotation = theta
 	move_and_slide()
 
 func death() -> void:
