@@ -45,9 +45,9 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 54
-theme_override_font_sizes/font_size = 165
-text = "Egg Drop
-Game"
+theme_override_font_sizes/font_size = 154
+text = "Eggspect the
+Uneggspected"
 horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="MainMenu/VBoxContainer" unique_id=1390529445]
@@ -78,7 +78,6 @@ theme_override_font_sizes/font_size = 144
 text = "Quit"
 
 [node name="LevelSelect" type="TextureRect" parent="." unique_id=1381461158]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

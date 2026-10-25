@@ -38,7 +38,7 @@ var egg: Egg = null
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-	
+	print("LEVEL ",level_number)
 	dummy_egg = $DummyEgg
 	dummy_egg.set_modifications(active_modifications)
 	win_floor_y = win_floor.position.y

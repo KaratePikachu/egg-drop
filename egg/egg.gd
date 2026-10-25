@@ -81,9 +81,11 @@ func deactivate_mod(mod: Modification) -> void:
 		"left_fan":
 			SFXFanL.stop()
 			fan_force -= -fan_power
+			$FanLeft.emitting = false
 		"right_fan":
 			SFXFanR.stop()
 			fan_force -= fan_power
+			$FanRight.emitting = false
 		"basic_umbrella":
 			parachute_open = false
 			SFXUmbrellaOpen.play()
@@ -112,9 +114,11 @@ func activate_mod(mod: Modification) -> void:
 		"left_fan":
 			fan_force += -fan_power
 			SFXFanL.play()
+			$FanLeft.emitting = true
 		"right_fan":
 			fan_force += fan_power
 			SFXFanR.play()
+			$FanRight.emitting = true
 		"basic_umbrella":
 			parachute_open = true
 			theta = 0
