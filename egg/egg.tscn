@@ -72,6 +72,7 @@ gradient = SubResource("Gradient_umx0v")
 [node name="Egg" type="CharacterBody2D" unique_id=804795384 groups=["egg"]]
 script = ExtResource("1_umx0v")
 parachute_terminal_velocity = 200.0
+fan_power = 15.0
 modifications = Array[ExtResource("2_1neqk")]([SubResource("Resource_2h7ub"), SubResource("Resource_u6fx5"), SubResource("Resource_grnsv"), SubResource("Resource_7vm0l"), SubResource("Resource_88ix8"), SubResource("Resource_3d5hr")])
 
 [node name="Egg" type="Sprite2D" parent="." unique_id=2046109628]

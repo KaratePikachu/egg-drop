@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dfkb68gmpsjwk"]
+
+[ext_resource type="PackedScene" uid="uid://cpg0ctscpw0h5" path="res://level/level.tscn" id="1_yk0wt"]
+[ext_resource type="PackedScene" uid="uid://dc72rt8fqehk6" path="res://obstacles/wind/wind.tscn" id="3_nr4ye"]
+[ext_resource type="PackedScene" uid="uid://ujggyugtbxy5" path="res://obstacles/fat_guy/fat_guy.tscn" id="3_se3ff"]
+
+[node name="Level" unique_id=1976594912 instance=ExtResource("1_yk0wt")]
+
+[node name="WinFloor" parent="." index="3" unique_id=1248466689]
+position = Vector2(0, 12000)
+
+[node name="Wind" parent="." index="10" unique_id=1209714576 instance=ExtResource("3_nr4ye")]
+position = Vector2(1193, 3129)
+wind_speed = 20.0
+size = Vector2(4000, 1000)
+
+[node name="Wind2" parent="." index="11" unique_id=611723576 instance=ExtResource("3_nr4ye")]
+position = Vector2(-118, 5356)
+size = Vector2(4000, 1000)
+
+[node name="FatGuy" parent="." index="12" unique_id=2111557991 instance=ExtResource("3_se3ff")]
+position = Vector2(1418, 1697)
+
+[node name="FatGuy2" parent="." index="13" unique_id=1166130785 instance=ExtResource("3_se3ff")]
+position = Vector2(-352, 4247)

@@ -17,6 +17,7 @@ class_name Egg
 @export var tilt_factor: float = -5000.0
 @export var drag_x: float = 20.0
 @export var bomb_impulse: float = 800
+@export var fan_power: float = 10
 
 @export var modifications: Array[Modification]
 
@@ -79,10 +80,10 @@ func deactivate_mod(mod: Modification) -> void:
 	match mod.name:
 		"left_fan":
 			SFXFanL.stop()
-			fan_force -= -10
+			fan_force -= -fan_power
 		"right_fan":
 			SFXFanR.stop()
-			fan_force -= 10
+			fan_force -= fan_power
 		"basic_umbrella":
 			parachute_open = false
 			SFXUmbrellaOpen.play()
@@ -109,10 +110,10 @@ func activate_mod(mod: Modification) -> void:
 	
 	match mod.name:
 		"left_fan":
-			fan_force += -10
+			fan_force += -fan_power
 			SFXFanL.play()
 		"right_fan":
-			fan_force += 10
+			fan_force += fan_power
 			SFXFanR.play()
 		"basic_umbrella":
 			parachute_open = true
