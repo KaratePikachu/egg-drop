@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ujggyugtbxy5" path="res://obstacles/fat_guy/fat_guy.tscn" id="3_se3ff"]
 
 [node name="Level" unique_id=1976594912 instance=ExtResource("1_yk0wt")]
+level_number = 3
 
 [node name="WinFloor" parent="." index="3" unique_id=1248466689]
 position = Vector2(0, 12000)

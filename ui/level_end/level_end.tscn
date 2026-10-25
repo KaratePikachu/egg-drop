@@ -57,20 +57,20 @@ theme_override_font_sizes/font_size = 150
 text = "You did it!"
 horizontal_alignment = 1
 
-[node name="Retry" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=2059917416]
-custom_minimum_size = Vector2(500, 200)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 80
-text = "Retry
-"
-
 [node name="Next Level" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=3358179]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 80
 text = "Next Level
+"
+
+[node name="Retry" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=2059917416]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "Retry
 "
 
 [node name="Level Select" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=2128158893]
@@ -81,6 +81,6 @@ theme_override_font_sizes/font_size = 80
 text = "Level Select
 "
 
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Next Level" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dddb54taxyof4" path="res://obstacles/shark/shark.tscn" id="2_s8rxg"]
 
 [node name="Level2" unique_id=1976594912 instance=ExtResource("1_8pmo6")]
+level_number = 2
 
 [node name="DummyEgg" parent="." index="0" unique_id=1402220803]
 position = Vector2(500, 300)

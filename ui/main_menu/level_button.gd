@@ -12,4 +12,4 @@ class_name LevelButton
 func _on_pressed() -> void:
 	SFXSelect.play()
 	await get_tree().create_timer(1.0).timeout
-	Level.load_level(level_num-1)
+	Level.load_level(level_num)

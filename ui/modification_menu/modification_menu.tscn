@@ -259,18 +259,19 @@ modification = ExtResource("7_o3o0r")
 
 [node name="ModificationButton6" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1651476976 instance=ExtResource("3_osh7i")]
 layout_mode = 2
-modification = ExtResource("7_o3o0r")
+modification = ExtResource("8_f7k5d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=52377448]
 libraries/ = SubResource("AnimationLibrary_osh7i")
 
 [node name="DropButton" type="Button" parent="." unique_id=120844629]
 layout_mode = 0
-offset_left = 206.0
-offset_top = 1904.0
-offset_right = 928.0
-offset_bottom = 2134.0
+offset_left = 326.0
+offset_top = 2091.0
+offset_right = 808.0
+offset_bottom = 2257.0
 theme = ExtResource("10_qir6i")
+theme_override_font_sizes/font_size = 92
 text = "Drop"
 
 [connection signal="pressed" from="SlidingArea/Tab" to="." method="_on_tab_pressed"]
