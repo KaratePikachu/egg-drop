@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Modification" format=3 uid="uid://cl2eps1bbxd0l"]
 
 [ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="1_cyfca"]
+[ext_resource type="Texture2D" uid="uid://os2b423alw8u" path="res://assets/egg/right fan with wind.png" id="1_meesy"]
 [ext_resource type="Texture2D" uid="uid://dt20pli5xfy13" path="res://assets/egg/right fan 1.PNG" id="1_ycrvy"]
 
 [resource]
 script = ExtResource("1_cyfca")
 name = "right_fan"
-icon = ExtResource("1_ycrvy")
+icon = ExtResource("1_meesy")
 icon_off = ExtResource("1_ycrvy")
 input = "right_fan"
 metadata/_custom_type_script = "uid://cylr504fygfq5"
