@@ -2,7 +2,7 @@ extends Control
 class_name EndScreen
 
 @export var level: Level
-@export var did_win: bool
+@export var did_win: bool = true
 
 func _ready() -> void:
 	hide()

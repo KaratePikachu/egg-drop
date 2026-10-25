@@ -164,9 +164,10 @@ func _on_win_area_body_entered(body: Node2D) -> void:
 		return
 		
 	
+	print(egg.velocity.y," ",egg.parachute_terminal_velocity + 10)
 	if egg.velocity.y <= egg.parachute_terminal_velocity + 10:
 		$CanvasLayer/LevelEnd.appear()
 	else:
 		egg.death()
 	
-	
+	egg.land(false)
