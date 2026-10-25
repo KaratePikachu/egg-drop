@@ -173,7 +173,8 @@ func _physics_process(delta: float) -> void:
 
 func death() -> void:
 	for node in get_children():
-		node.hide()
+		if node is Sprite2D:
+			node.hide()
 	is_dead = true
 	$CPUParticles2D.show()
 	$CPUParticles2D.emitting = true
