@@ -123,11 +123,6 @@ func activate_mod(mod: Modification) -> void:
 				velocity.y = -800
 				
 func land() -> void:
-	if velocity.y <= parachute_terminal_velocity:
-		print("you win")
-	else:
-		print("you lose")
-	
 	for mod in modifications:
 		deactivate_mod(mod)
 	landed = true

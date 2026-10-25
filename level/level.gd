@@ -18,6 +18,8 @@ var win_floor_y : float
 
 @export var egg_scene: PackedScene
 
+
+
 var camera_min_y : float
 var camera_max_y : float
 var current_phase : Phase
@@ -25,6 +27,7 @@ var panning : bool = false
 
 @onready var camera : Camera2D = $Camera2D
 @onready var mod_menu : ModificationMenu = $CanvasLayer/ModificationMenu
+@export var end_screen: PackedScene
 static var dummy_egg: DummyEgg
 
 var egg: Egg = null
@@ -137,5 +140,17 @@ static func load_level(level_num : int) -> void:
 
 
 func _on_win_area_body_entered(body: Node2D) -> void:
-	if body == egg:
-		egg.land()
+	
+	if body != egg:
+		return
+		
+	var screen: EndScreen = end_screen.instantiate()
+	
+	if egg.velocity.y <= egg.parachute_terminal_velocity + 10:
+		screen.did_win = true
+	else:
+		screen.did_win = false
+	
+	add_child(screen)
+	
+	egg.land()

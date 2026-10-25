@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://xwnwd7qpbs56" path="res://ui/modification_menu/modification_menu.tscn" id="2_5gx2l"]
 [ext_resource type="PackedScene" uid="uid://cvv8xnyxwur3o" path="res://egg/egg.tscn" id="2_ktfr2"]
 [ext_resource type="PackedScene" uid="uid://b4gxj00g4y8o4" path="res://egg/dummy_egg.tscn" id="2_vkbyq"]
+[ext_resource type="PackedScene" uid="uid://b86ir38reinvl" path="res://ui/level_end/level_end.tscn" id="3_44x8d"]
 [ext_resource type="Texture2D" uid="uid://cvbm652v6jwfp" path="res://test/ruler-icon-28.png" id="3_qohg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4td4"]
@@ -16,6 +17,7 @@ size = Vector2(1080, 87)
 script = ExtResource("1_7lnir")
 win_floor = NodePath("WinFloor")
 egg_scene = ExtResource("2_ktfr2")
+end_screen = ExtResource("3_44x8d")
 
 [node name="DummyEgg" parent="." unique_id=1402220803 instance=ExtResource("2_vkbyq")]
 position = Vector2(500, 100)
