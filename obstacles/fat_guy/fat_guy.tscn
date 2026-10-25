@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ujggyugtbxy5"]
+
+[ext_resource type="Script" uid="uid://cdd1efk7g25pi" path="res://obstacles/fat_guy/fat_guy.gd" id="1_3gl2i"]
+[ext_resource type="Texture2D" uid="uid://bh1m6tx1h5rx2" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/NormalWindowArt.png" id="2_3gl2i"]
+[ext_resource type="Texture2D" uid="uid://cpb2ma8qf4v3e" path="res://assets/JamfestFall2027Art/JamfestFall2027Art/FatGuyArt.png" id="2_qjhma"]
+
+[sub_resource type="Gradient" id="Gradient_ji5sd"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ji5sd"]
+gradient = SubResource("Gradient_ji5sd")
+width = 638
+height = 800
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ji5sd"]
+radius = 66.092735
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjhma"]
+size = Vector2(658, 9230)
+
+[node name="FatGuy" type="Node2D" unique_id=2111557991 node_paths=PackedStringArray("area_2d")]
+script = ExtResource("1_3gl2i")
+area_2d = NodePath("Sprite2D/Guy/Area2D")
+
+[node name="EmptyWindowArt" type="Sprite2D" parent="." unique_id=1895649762]
+scale = Vector2(2, 2)
+texture = ExtResource("2_3gl2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1769535315]
+clip_children = 1
+position = Vector2(-3, -66)
+texture = SubResource("GradientTexture2D_ji5sd")
+
+[node name="Guy" type="Sprite2D" parent="Sprite2D" unique_id=1090774788]
+position = Vector2(21, 376)
+scale = Vector2(4.085, 4.085)
+texture = ExtResource("2_qjhma")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/Guy" unique_id=689895618]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Guy/Area2D" unique_id=1019980321]
+shape = SubResource("CircleShape2D_ji5sd")
+
+[node name="DangerZone" type="Area2D" parent="." unique_id=178692970]
+position = Vector2(8, 5128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone" unique_id=1751006196]
+shape = SubResource("RectangleShape2D_qjhma")
+
+[connection signal="body_entered" from="Sprite2D/Guy/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="DangerZone" to="." method="_on_danger_zone_body_entered"]
