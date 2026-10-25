@@ -70,14 +70,6 @@ colors = PackedColorArray(0.9647059, 0.8352941, 0.60784316, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_umx0v"]
 gradient = SubResource("Gradient_umx0v")
 
-[sub_resource type="Animation" id="Animation_8pcjj"]
-resource_name = "FanLeft"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fnqf3"]
-_data = {
-&"FanLeft": SubResource("Animation_8pcjj")
-}
-
 [node name="Egg" type="CharacterBody2D" unique_id=804795384 groups=["egg"]]
 script = ExtResource("1_umx0v")
 parachute_terminal_velocity = 250.0
@@ -149,5 +141,3 @@ spread = 8.5
 gravity = Vector2(0, 0)
 initial_velocity_min = 300.0
 initial_velocity_max = 800.0
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1524688434]
-libraries/ = SubResource("AnimationLibrary_fnqf3")
