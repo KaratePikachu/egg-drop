@@ -14,7 +14,7 @@ size = Vector2(141, 632)
 [node name="Level" unique_id=1976594912 instance=ExtResource("1_pbpmq")]
 
 [node name="Shark2" type="CharacterBody2D" parent="." index="9" unique_id=645416866]
-position = Vector2(-291, 6399)
+position = Vector2(-300, 7175)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -45,7 +45,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark3" type="CharacterBody2D" parent="." index="10" unique_id=566729418]
-position = Vector2(71, 6399)
+position = Vector2(62, 7175)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -76,7 +76,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark4" type="CharacterBody2D" parent="." index="11" unique_id=2114719284]
-position = Vector2(437, 6399)
+position = Vector2(428, 7175)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -107,7 +107,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark5" type="CharacterBody2D" parent="." index="12" unique_id=655064897]
-position = Vector2(803, 6403)
+position = Vector2(794, 7179)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -138,7 +138,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark6" type="CharacterBody2D" parent="." index="13" unique_id=1962131958]
-position = Vector2(1162, 6403)
+position = Vector2(1153, 7179)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -169,7 +169,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark7" type="CharacterBody2D" parent="." index="14" unique_id=100115109]
-position = Vector2(1524, 6403)
+position = Vector2(1515, 7179)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -200,7 +200,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark8" type="CharacterBody2D" parent="." index="15" unique_id=1425116332]
-position = Vector2(1890, 6403)
+position = Vector2(1881, 7179)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -231,7 +231,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark9" type="CharacterBody2D" parent="." index="16" unique_id=1842304190]
-position = Vector2(-640, 7287)
+position = Vector2(-649, 8063)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -262,7 +262,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark10" type="CharacterBody2D" parent="." index="17" unique_id=1773434453]
-position = Vector2(-278, 7287)
+position = Vector2(-287, 8063)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -293,7 +293,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
 [node name="Shark11" type="CharacterBody2D" parent="." index="18" unique_id=1700577563]
-position = Vector2(88, 7287)
+position = Vector2(79, 8063)
 script = ExtResource("2_8rsbt")
 jump_duration = 0.4
 
@@ -323,37 +323,6 @@ position = Vector2(27, 0)
 scale = Vector2(3, 3)
 texture = ExtResource("4_26go3")
 
-[node name="Shark12" type="CharacterBody2D" parent="." index="19" unique_id=1435884445]
-position = Vector2(454, 7291)
-script = ExtResource("2_8rsbt")
-jump_duration = 0.4
-
-[node name="Warning" type="Area2D" parent="Shark12" index="0" unique_id=1523854423]
-position = Vector2(0, -3987)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark12/Warning" index="0" unique_id=597212568]
-position = Vector2(-3, -10)
-shape = SubResource("RectangleShape2D_sita2")
-
-[node name="SharkWarning" type="Sprite2D" parent="Shark12/Warning" index="1" unique_id=197996964]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_nmqwb")
-
-[node name="Shark" type="StaticBody2D" parent="Shark12" index="1" unique_id=771922348]
-
-[node name="SharkArea" type="Area2D" parent="Shark12/Shark" index="0" unique_id=835121844]
-position = Vector2(7, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark12/Shark/SharkArea" index="0" unique_id=2130235556]
-position = Vector2(-3, 11)
-scale = Vector2(2.2400017, 1)
-shape = SubResource("RectangleShape2D_087e3")
-
-[node name="Sprite2D" type="Sprite2D" parent="Shark12/Shark" index="1" unique_id=1228877957]
-position = Vector2(27, 0)
-scale = Vector2(3, 3)
-texture = ExtResource("4_26go3")
-
 [connection signal="body_entered" from="Shark2/Warning" to="Shark2" method="_on_warning_body_entered"]
 [connection signal="body_entered" from="Shark2/Shark/SharkArea" to="Shark2" method="_on_shark_area_body_entered"]
 [connection signal="body_entered" from="Shark3/Warning" to="Shark3" method="_on_warning_body_entered"]
@@ -374,5 +343,3 @@ texture = ExtResource("4_26go3")
 [connection signal="body_entered" from="Shark10/Shark/SharkArea" to="Shark10" method="_on_shark_area_body_entered"]
 [connection signal="body_entered" from="Shark11/Warning" to="Shark11" method="_on_warning_body_entered"]
 [connection signal="body_entered" from="Shark11/Shark/SharkArea" to="Shark11" method="_on_shark_area_body_entered"]
-[connection signal="body_entered" from="Shark12/Warning" to="Shark12" method="_on_warning_body_entered"]
-[connection signal="body_entered" from="Shark12/Shark/SharkArea" to="Shark12" method="_on_shark_area_body_entered"]
