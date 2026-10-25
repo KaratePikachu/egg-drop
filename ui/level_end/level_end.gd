@@ -8,6 +8,9 @@ func _ready() -> void:
 	hide()
 
 func appear() -> void:
+	if visible:
+		return
+	
 	show()
 	if not did_win:
 		$"Panel/MarginContainer/VBoxContainer/Next Level".queue_free()
