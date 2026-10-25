@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://84cppem4gc4b"]
+
+[ext_resource type="PackedScene" uid="uid://cpg0ctscpw0h5" path="res://level/level.tscn" id="1_8pmo6"]
+[ext_resource type="PackedScene" uid="uid://dddb54taxyof4" path="res://obstacles/shark/shark.tscn" id="2_s8rxg"]
+
+[node name="Level" unique_id=1976594912 instance=ExtResource("1_8pmo6")]
+
+[node name="Shark" parent="." index="6" unique_id=645416866 instance=ExtResource("2_s8rxg")]
+position = Vector2(1582, 12706)
+
+[node name="Warning" parent="Shark" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark2" parent="." index="7" unique_id=1221992302 instance=ExtResource("2_s8rxg")]
+position = Vector2(1168, 12706)
+
+[node name="Warning" parent="Shark2" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark3" parent="." index="8" unique_id=2128463957 instance=ExtResource("2_s8rxg")]
+position = Vector2(763, 12706)
+
+[node name="Warning" parent="Shark3" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark4" parent="." index="9" unique_id=1327982063 instance=ExtResource("2_s8rxg")]
+position = Vector2(285, 14196)
+
+[node name="Warning" parent="Shark4" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark12" parent="." index="10" unique_id=1859992220 instance=ExtResource("2_s8rxg")]
+position = Vector2(735, 14196)
+
+[node name="Warning" parent="Shark12" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark13" parent="." index="11" unique_id=1903731055 instance=ExtResource("2_s8rxg")]
+position = Vector2(1589, 14196)
+
+[node name="Warning" parent="Shark13" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark7" parent="." index="12" unique_id=417376239 instance=ExtResource("2_s8rxg")]
+position = Vector2(331, 12720)
+
+[node name="Warning" parent="Shark7" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark14" parent="." index="13" unique_id=1642837164 instance=ExtResource("2_s8rxg")]
+position = Vector2(-587, 12720)
+
+[node name="Warning" parent="Shark14" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark5" parent="." index="14" unique_id=112602449 instance=ExtResource("2_s8rxg")]
+position = Vector2(-142, 14196)
+
+[node name="Warning" parent="Shark5" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark6" parent="." index="15" unique_id=1410714223 instance=ExtResource("2_s8rxg")]
+position = Vector2(-547, 14196)
+
+[node name="Warning" parent="Shark6" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark8" parent="." index="16" unique_id=1577632145 instance=ExtResource("2_s8rxg")]
+position = Vector2(1155, 15655)
+
+[node name="Warning" parent="Shark8" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark15" parent="." index="17" unique_id=906047261 instance=ExtResource("2_s8rxg")]
+position = Vector2(1605, 15655)
+
+[node name="Warning" parent="Shark15" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark9" parent="." index="18" unique_id=1783226565 instance=ExtResource("2_s8rxg")]
+position = Vector2(728, 15655)
+
+[node name="Warning" parent="Shark9" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[node name="Shark10" parent="." index="19" unique_id=1431442544 instance=ExtResource("2_s8rxg")]
+position = Vector2(-521, 15655)
+
+[node name="Warning" parent="Shark10" index="0" unique_id=1683182662]
+position = Vector2(0, -10685)
+
+[editable path="Shark"]
+[editable path="Shark2"]
+[editable path="Shark3"]
+[editable path="Shark4"]
+[editable path="Shark12"]
+[editable path="Shark13"]
+[editable path="Shark7"]
+[editable path="Shark14"]
+[editable path="Shark5"]
+[editable path="Shark6"]
+[editable path="Shark8"]
+[editable path="Shark15"]
+[editable path="Shark9"]
+[editable path="Shark10"]

@@ -168,7 +168,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 1.5
 	else:
 		if not landed:
-			velocity.y += (600 * delta)
+			velocity.y += (800 * delta)
 	move_and_slide()
 
 func death() -> void:
