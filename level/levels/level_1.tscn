@@ -5,8 +5,6 @@
 [ext_resource type="Resource" uid="uid://b36e0deyggd1c" path="res://modifications/basic_umbrella.tres" id="3_wg4fv"]
 [ext_resource type="Resource" uid="uid://c42aj75jikx0v" path="res://modifications/left_fan.tres" id="4_blww0"]
 [ext_resource type="Resource" uid="uid://cl2eps1bbxd0l" path="res://modifications/right_fan.tres" id="5_lemno"]
-[ext_resource type="PackedScene" uid="uid://ujggyugtbxy5" path="res://obstacles/fat_guy/fat_guy.tscn" id="7_blww0"]
-[ext_resource type="PackedScene" uid="uid://b5fknl24w6u7h" path="res://obstacles/frog/frog.tscn" id="8_adifw"]
 [ext_resource type="Texture2D" uid="uid://cvbm652v6jwfp" path="res://test/ruler-icon-28.png" id="8_lemno"]
 
 [node name="Level1" unique_id=1976594912 instance=ExtResource("1_roo1r")]
@@ -21,17 +19,8 @@ available_mods = Array[ExtResource("2_35gx7")]([ExtResource("3_wg4fv"), ExtResou
 [node name="WinFloor" parent="." index="3" unique_id=1248466689]
 position = Vector2(0, 10000)
 
-[node name="FatGuy" parent="." index="6" unique_id=2111557991 instance=ExtResource("7_blww0")]
-position = Vector2(96, 1848)
-
-[node name="Sprite2D" parent="." index="10" unique_id=967029778]
+[node name="Sprite2D" parent="." index="9" unique_id=967029778]
 z_index = 0
 position = Vector2(1116, 1264)
 scale = Vector2(5.015625, 5.015625)
 texture = ExtResource("8_lemno")
-
-[node name="Frog" parent="." index="11" unique_id=1310900993 instance=ExtResource("8_adifw")]
-position = Vector2(304, 3544)
-
-[node name="Frog2" parent="." index="12" unique_id=1254605586 instance=ExtResource("8_adifw")]
-position = Vector2(1016, 3544)
