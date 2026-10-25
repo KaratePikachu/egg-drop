@@ -12,7 +12,7 @@ static var entering_new_level : bool = true
 static var active_modifications : Array[Modification]
 static var levels : Array[String] = [
 	"res://level/levels/level_1.tscn",
-	
+
 ]
 @export var level_number : int
 var win_floor_y : float
@@ -45,7 +45,6 @@ func _ready() -> void:
 	print(camera_min_y, " ",camera_max_y)
 	
 	mod_menu.drop_pressed.connect(start_drop)
-	egg.die.connect(lose)
 	
 	if entering_new_level:
 		active_modifications = []
@@ -72,6 +71,7 @@ func start_drop() -> void:
 	egg.position = dummy_egg.position
 	add_child(egg)
 	remove_child(dummy_egg)
+	egg.die.connect(lose)
 	mod_menu.queue_free()
 	current_phase = Phase.DROP
 	
