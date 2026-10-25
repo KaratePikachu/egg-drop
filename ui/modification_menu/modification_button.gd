@@ -5,6 +5,7 @@ class_name ModificationButton
 @export var modification : Modification:
 	set(val):
 		modification = val
+		icon = modification.icon
 		visible = modification != null
 
 

@@ -12,12 +12,11 @@ static var entering_new_level : bool = true
 static var active_modifications : Array[Modification]
 static var levels : Array[String]
 @export var level_number : int
-@export var win_floor_y : float = 2400:
-	set(val):
-		win_floor_y = val
-		win_floor.position.y = win_floor_y
+var win_floor_y : float
 
 @export var win_floor : Node2D
+
+@export var egg_scene: PackedScene
 
 var camera_min_y : float
 var camera_max_y : float
@@ -26,10 +25,18 @@ var panning : bool = false
 
 @onready var camera : Camera2D = $Camera2D
 @onready var mod_menu : ModificationMenu = $CanvasLayer/ModificationMenu
+static var dummy_egg: DummyEgg
+
+var egg: Egg = null
 
 func _ready() -> void:
+	dummy_egg = $DummyEgg
+	dummy_egg.set_modifications(active_modifications)
+	win_floor_y = win_floor.position.y
 	camera_min_y = 0.5*camera.get_viewport_rect().size.y
 	camera_max_y = win_floor_y-0.5*camera.get_viewport_rect().size.y + 100
+	
+	mod_menu.drop_pressed.connect(start_drop)
 	
 	if entering_new_level:
 		active_modifications = []
@@ -50,6 +57,14 @@ func _ready() -> void:
 	else:
 		current_phase = Phase.MODIFY
 		
+func start_drop() -> void:
+	egg = egg_scene.instantiate()
+	egg.modifications = active_modifications.duplicate_deep()
+	egg.position = dummy_egg.position
+	add_child(egg)
+	remove_child(dummy_egg)
+	mod_menu.queue_free()
+	current_phase = Phase.DROP
 	
 
 func _input(event: InputEvent) -> void:
@@ -85,12 +100,16 @@ static func add_mod(modification : Modification) -> void:
 	if i != -1:
 		return
 	active_modifications.append(modification)
+	if dummy_egg:
+		dummy_egg.set_modifications(active_modifications)
 
 static func remove_mod(modification : Modification) -> void:
 	var i : int = find_modification(modification)
 	if i == -1:
 		return
 	active_modifications.remove_at(i)
+	if dummy_egg:
+		dummy_egg.set_modifications(active_modifications)
 
 static func find_modification(modification : Modification) -> int:
 	for i : int in range(active_modifications.size()):
@@ -111,3 +130,8 @@ static func load_level(level_num : int) -> void:
 	entering_new_level = true
 	SceneChanger.change_to_file(levels[level_num-1])
 #endregion
+
+
+func _on_win_area_body_entered(body: Node2D) -> void:
+	if body == egg:
+		egg.land()

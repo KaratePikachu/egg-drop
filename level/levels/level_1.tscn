@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cpg0ctscpw0h5" path="res://level/level.tscn" id="1_roo1r"]
 [ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="2_35gx7"]
-[ext_resource type="Resource" uid="uid://b36e0deyggd1c" path="res://modifications/parachute.tres" id="3_wg4fv"]
+[ext_resource type="Resource" uid="uid://b36e0deyggd1c" path="res://modifications/basic_umbrella.tres" id="3_wg4fv"]
 [ext_resource type="Texture2D" uid="uid://dqsypqrvcmp7l" path="res://assets/egg/egg.PNG" id="4_wg4fv"]
 
 [node name="Level1" unique_id=1976594912 instance=ExtResource("1_roo1r")]

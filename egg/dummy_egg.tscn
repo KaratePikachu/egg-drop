@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b4gxj00g4y8o4"]
+
+[ext_resource type="Script" uid="uid://cbp70hltcw4er" path="res://egg/dummy_egg.gd" id="1_lo18t"]
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="2_cbjjo"]
+[ext_resource type="Texture2D" uid="uid://do6lsa0ga8dpo" path="res://assets/egg/umbrella open.PNG" id="3_mvag7"]
+[ext_resource type="Texture2D" uid="uid://cml1ce7bc04g" path="res://assets/egg/umbrella closed.PNG" id="4_3w6h7"]
+[ext_resource type="Texture2D" uid="uid://dqsypqrvcmp7l" path="res://assets/egg/egg.PNG" id="5_51u2m"]
+
+[sub_resource type="Resource" id="Resource_u6fx5"]
+script = ExtResource("2_cbjjo")
+name = "umbrella"
+icon = ExtResource("3_mvag7")
+icon_off = ExtResource("4_3w6h7")
+input = "umbrella"
+metadata/_custom_type_script = "uid://cylr504fygfq5"
+
+[node name="DummyEgg" type="Node2D" unique_id=1402220803]
+script = ExtResource("1_lo18t")
+modifications = Array[ExtResource("2_cbjjo")]([SubResource("Resource_u6fx5")])
+
+[node name="Egg" type="Sprite2D" parent="." unique_id=731220004]
+texture = ExtResource("5_51u2m")

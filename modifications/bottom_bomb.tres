@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Modification" format=3 uid="uid://ci36330mr8egl"]
+
+[ext_resource type="Texture2D" uid="uid://cv0gmuto7751s" path="res://assets/egg/bottom bomb.PNG" id="1_fayrq"]
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="1_ogr5v"]
+
+[resource]
+script = ExtResource("1_ogr5v")
+name = "bottom_bomb"
+icon = ExtResource("1_fayrq")
+is_single_use = true
+input = "bottom_bomb"
+metadata/_custom_type_script = "uid://cylr504fygfq5"

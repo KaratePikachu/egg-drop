@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Modification" format=3 uid="uid://chlm4yeoshec8"]
+
+[ext_resource type="Texture2D" uid="uid://ba55k0r1qvad3" path="res://assets/egg/right bomb.PNG" id="1_nv1vw"]
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="1_u23fi"]
+
+[resource]
+script = ExtResource("1_u23fi")
+name = "right_bomb"
+icon = ExtResource("1_nv1vw")
+is_single_use = true
+input = "right_bomb"
+metadata/_custom_type_script = "uid://cylr504fygfq5"

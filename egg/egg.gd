@@ -16,6 +16,7 @@ var omega: float = 0.0
 var fan_force = 0
 var parachute_open: bool
 var theta: float = 0.0
+var landed: bool = false
 
 func _refresh_mods() -> void:
 	for mod : Modification in modifications:
@@ -33,6 +34,8 @@ func _ready() -> void:
 	_refresh_mods()
 
 func _input(event: InputEvent) -> void:
+	if landed:
+		return
 	for mod in modifications:
 		if not event.is_action_pressed(mod.input):
 			continue
@@ -51,6 +54,8 @@ func _input(event: InputEvent) -> void:
 		return
 
 func deactivate_mod(mod: Modification) -> void:
+	if mod.toggled == false:
+		return
 	mod.toggled = false
 	
 	
@@ -68,6 +73,8 @@ func deactivate_mod(mod: Modification) -> void:
 			parachute_open = false
 	
 func activate_mod(mod: Modification) -> void:
+	if mod.toggled == true:
+		return
 	mod.toggled = true
 	
 	# icon
@@ -114,7 +121,18 @@ func activate_mod(mod: Modification) -> void:
 				velocity.y = -1200
 			else:
 				velocity.y = -800
-
+				
+func land() -> void:
+	if velocity.y <= parachute_terminal_velocity:
+		print("you win")
+	else:
+		print("you lose")
+	
+	for mod in modifications:
+		deactivate_mod(mod)
+	landed = true
+	velocity.x = 0
+	parachute_open = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 
@@ -129,7 +147,9 @@ func _physics_process(delta: float) -> void:
 	if parachute_open:
 		var accel = sin(theta) * tilt_factor - drag_x * velocity.x
 		velocity.x += accel * delta
-		velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 1.5
+		if not landed:
+			velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 1.5
 	else:
-		velocity.y += (600 * delta)
+		if not landed:
+			velocity.y += (600 * delta)
 	move_and_slide()

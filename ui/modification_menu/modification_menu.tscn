@@ -2,7 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bq1kxrxmub3qq" path="res://icon.svg" id="1_nihoe"]
 [ext_resource type="Script" uid="uid://natc6t5n5swh" path="res://ui/modification_menu/modification_menu.gd" id="1_sueqx"]
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="2_n13yq"]
 [ext_resource type="PackedScene" uid="uid://47sdh7xrojlf" path="res://ui/modification_menu/modification_button.tscn" id="3_osh7i"]
+[ext_resource type="Resource" uid="uid://b36e0deyggd1c" path="res://modifications/basic_umbrella.tres" id="3_qir6i"]
+[ext_resource type="Resource" uid="uid://c42aj75jikx0v" path="res://modifications/left_fan.tres" id="4_1c5mp"]
+[ext_resource type="Resource" uid="uid://cl2eps1bbxd0l" path="res://modifications/right_fan.tres" id="5_x8ro7"]
+[ext_resource type="Resource" uid="uid://dlq1a7ynkyayw" path="res://modifications/left_bomb.tres" id="6_b75t7"]
+[ext_resource type="Resource" uid="uid://chlm4yeoshec8" path="res://modifications/right_bomb.tres" id="7_o3o0r"]
+[ext_resource type="Resource" uid="uid://ci36330mr8egl" path="res://modifications/bottom_bomb.tres" id="8_f7k5d"]
+[ext_resource type="Texture2D" uid="uid://do6lsa0ga8dpo" path="res://assets/egg/umbrella open.PNG" id="11_x8ro7"]
+[ext_resource type="Texture2D" uid="uid://dt20pli5xfy13" path="res://assets/egg/right fan 1.PNG" id="12_b75t7"]
+[ext_resource type="Texture2D" uid="uid://d27e3o1y5su4c" path="res://assets/egg/left fan 1.PNG" id="13_o3o0r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lnir"]
 bg_color = Color(0.61970025, 0.24652845, 0, 1)
@@ -138,6 +148,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sueqx")
 mod_button_container = NodePath("SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications")
+available_mods = Array[ExtResource("2_n13yq")]([ExtResource("3_qir6i"), ExtResource("4_1c5mp"), ExtResource("5_x8ro7"), ExtResource("6_b75t7"), ExtResource("7_o3o0r"), ExtResource("8_f7k5d")])
 
 [node name="SlidingArea" type="Control" parent="." unique_id=1819905087]
 layout_mode = 1
@@ -222,19 +233,31 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="ModificationButton" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1716547921 instance=ExtResource("3_osh7i")]
-visible = false
 layout_mode = 2
+icon = ExtResource("11_x8ro7")
+modification = ExtResource("3_qir6i")
 
 [node name="ModificationButton2" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=1236014988 instance=ExtResource("3_osh7i")]
-visible = false
 layout_mode = 2
+icon = ExtResource("12_b75t7")
+modification = ExtResource("5_x8ro7")
 
 [node name="ModificationButton3" parent="SlidingArea/Panel/MarginContainer/VBoxContainer/Modifications" unique_id=782207886 instance=ExtResource("3_osh7i")]
-visible = false
 layout_mode = 2
+icon = ExtResource("13_o3o0r")
+modification = ExtResource("4_1c5mp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=52377448]
 libraries/ = SubResource("AnimationLibrary_osh7i")
 
+[node name="DropButton" type="Button" parent="." unique_id=120844629]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 1904.0
+offset_right = 928.0
+offset_bottom = 2134.0
+text = "Drop"
+
 [connection signal="pressed" from="SlidingArea/Tab" to="." method="_on_tab_pressed"]
 [connection signal="toggled" from="SlidingArea/Tab" to="." method="_on_button_toggled"]
+[connection signal="pressed" from="DropButton" to="." method="_on_drop_button_pressed"]

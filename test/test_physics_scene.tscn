@@ -1,80 +1,22 @@
 [gd_scene format=3 uid="uid://ctoke2wtxl743"]
 
-[ext_resource type="Script" uid="uid://cgkkpoihbsf3s" path="res://test/egg.gd" id="2_2h7ub"]
+[ext_resource type="PackedScene" uid="uid://cvv8xnyxwur3o" path="res://egg/egg.tscn" id="2_wo556"]
 [ext_resource type="Texture2D" uid="uid://cvbm652v6jwfp" path="res://test/ruler-icon-28.png" id="3_2h7ub"]
-[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="3_u6fx5"]
-[ext_resource type="Texture2D" uid="uid://d27e3o1y5su4c" path="res://assets/egg/left fan 1.PNG" id="4_88ix8"]
-[ext_resource type="Texture2D" uid="uid://dqsypqrvcmp7l" path="res://assets/egg/egg.PNG" id="4_u6fx5"]
-[ext_resource type="Texture2D" uid="uid://dt20pli5xfy13" path="res://assets/egg/right fan 1.PNG" id="5_3d5hr"]
-[ext_resource type="Texture2D" uid="uid://do6lsa0ga8dpo" path="res://assets/egg/umbrella open.PNG" id="6_yk20g"]
-[ext_resource type="Texture2D" uid="uid://cml1ce7bc04g" path="res://assets/egg/umbrella closed.PNG" id="7_3d5hr"]
-
-[sub_resource type="Resource" id="Resource_2h7ub"]
-script = ExtResource("3_u6fx5")
-name = "left_fan"
-icon = ExtResource("4_88ix8")
-input = "left_fan"
-metadata/_custom_type_script = "uid://cylr504fygfq5"
-
-[sub_resource type="Resource" id="Resource_u6fx5"]
-script = ExtResource("3_u6fx5")
-name = "right_fan"
-icon = ExtResource("5_3d5hr")
-input = "right_fan"
-metadata/_custom_type_script = "uid://cylr504fygfq5"
-
-[sub_resource type="Resource" id="Resource_grnsv"]
-script = ExtResource("3_u6fx5")
-name = "basic_umbrella"
-icon = ExtResource("6_yk20g")
-icon_off = ExtResource("7_3d5hr")
-input = "umbrella"
-metadata/_custom_type_script = "uid://cylr504fygfq5"
-
-[sub_resource type="Resource" id="Resource_7vm0l"]
-script = ExtResource("3_u6fx5")
-name = "right_bomb"
-is_single_use = true
-input = "right_bomb"
-metadata/_custom_type_script = "uid://cylr504fygfq5"
-
-[sub_resource type="Resource" id="Resource_88ix8"]
-script = ExtResource("3_u6fx5")
-name = "left_bomb"
-is_single_use = true
-input = "left_bomb"
-metadata/_custom_type_script = "uid://cylr504fygfq5"
-
-[sub_resource type="Resource" id="Resource_3d5hr"]
-script = ExtResource("3_u6fx5")
-name = "bottom_bomb"
-is_single_use = true
-input = "bottom_bomb"
-metadata/_custom_type_script = "uid://cylr504fygfq5"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3d5hr"]
-radius = 61.0
-height = 192.0
+[ext_resource type="Resource" uid="uid://b36e0deyggd1c" path="res://modifications/basic_umbrella.tres" id="4_3d5hr"]
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="4_88ix8"]
+[ext_resource type="Resource" uid="uid://c42aj75jikx0v" path="res://modifications/left_fan.tres" id="5_yk20g"]
+[ext_resource type="Resource" uid="uid://cl2eps1bbxd0l" path="res://modifications/right_fan.tres" id="6_reyoi"]
 
 [node name="TestPhysicsScene" type="Node2D" unique_id=1424677881]
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=290957376]
+[node name="Ruler" type="Sprite2D" parent="." unique_id=290957376]
 position = Vector2(-842, 27.500023)
 scale = Vector2(6.132812, 10.095703)
 texture = ExtResource("3_2h7ub")
 
-[node name="Egg" type="CharacterBody2D" parent="." unique_id=585253029]
+[node name="Egg" parent="." unique_id=804795384 instance=ExtResource("2_wo556")]
 position = Vector2(0, -2000)
-script = ExtResource("2_2h7ub")
-parachute_terminal_velocity = 180.0
-modifications = Array[ExtResource("3_u6fx5")]([SubResource("Resource_2h7ub"), SubResource("Resource_u6fx5"), SubResource("Resource_grnsv"), SubResource("Resource_7vm0l"), SubResource("Resource_88ix8"), SubResource("Resource_3d5hr")])
-
-[node name="Egg" type="Sprite2D" parent="Egg" unique_id=1622334333]
-texture = ExtResource("4_u6fx5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg" unique_id=692496194]
-position = Vector2(2, 107)
-shape = SubResource("CapsuleShape2D_3d5hr")
+modifications = Array[ExtResource("4_88ix8")]([ExtResource("4_3d5hr"), ExtResource("5_yk20g"), ExtResource("6_reyoi")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1871565077]
 zoom = Vector2(0.4, 0.4)

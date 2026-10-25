@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Modification" format=3 uid="uid://b36e0deyggd1c"]
+
+[ext_resource type="Texture2D" uid="uid://do6lsa0ga8dpo" path="res://assets/egg/umbrella open.PNG" id="1_oxwrs"]
+[ext_resource type="Texture2D" uid="uid://cml1ce7bc04g" path="res://assets/egg/umbrella closed.PNG" id="2_3d5j6"]
+[ext_resource type="Script" uid="uid://cylr504fygfq5" path="res://modifications/modification.gd" id="3_pthqm"]
+
+[resource]
+script = ExtResource("3_pthqm")
+name = "basic_umbrella"
+icon = ExtResource("1_oxwrs")
+icon_off = ExtResource("2_3d5j6")
+input = "umbrella"
+metadata/_custom_type_script = "uid://cylr504fygfq5"
