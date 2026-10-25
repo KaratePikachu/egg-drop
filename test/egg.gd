@@ -1,15 +1,14 @@
 extends CharacterBody2D
 class_name Egg
 
-@export var radius: float
 @export var parachute_terminal_velocity: float
-@export var mass: float = 200
 
 @export var stiffness: float = 10.0
 @export var damping: float = 5
 
 @export var tilt_factor: float = -5000.0
 @export var drag_x: float = 20.0
+@export var bomb_impulse: float = 800
 
 @export var modifications: Array[Modification]
 
@@ -62,9 +61,9 @@ func deactivate_mod(mod: Modification) -> void:
 		
 	match mod.name:
 		"left_fan":
-			fan_force -= -5	
+			fan_force -= -10
 		"right_fan":
-			fan_force -= 5
+			fan_force -= 10
 		"basic_umbrella":
 			parachute_open = false
 	
@@ -87,35 +86,50 @@ func activate_mod(mod: Modification) -> void:
 	
 	match mod.name:
 		"left_fan":
-			fan_force += -5	
+			fan_force += -10
 		"right_fan":
-			fan_force += 5
+			fan_force += 10
 		"basic_umbrella":
 			parachute_open = true
+			theta = 0
 		"right_bomb":
-			omega = -15
+			if parachute_open:
+				omega = -8
+				theta = -0.5
+				velocity.x = 8000
+			else:
+				omega = -3
+				velocity.x += bomb_impulse
 		"left_bomb":
-			omega = 15
+			
+			if parachute_open:
+				omega = 8
+				theta = 0.5
+				velocity.x = -8000
+			else:
+				omega = 3
+				velocity.x -= bomb_impulse
 		"bottom_bomb":
 			if parachute_open:
-				velocity.y = -600
+				velocity.y = -1200
 			else:
-				velocity.y = -300
+				velocity.y = -800
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 
 	var torque = fan_force
-	var omega_accel = torque - stiffness * theta - damping * omega
+	var omega_accel = torque
+	if parachute_open:
+		omega_accel -= stiffness * theta + damping * omega
 	omega += omega_accel * delta
 	theta += omega * delta
 	rotation = theta
 
-	var accel = sin(theta) * tilt_factor - drag_x * velocity.x
-	velocity.x += accel * delta
-
 	if parachute_open:
+		var accel = sin(theta) * tilt_factor - drag_x * velocity.x
+		velocity.x += accel * delta
 		velocity.y += (parachute_terminal_velocity - velocity.y) * delta * 1.5
 	else:
-		velocity.y += (200 * delta)
+		velocity.y += (600 * delta)
 	move_and_slide()

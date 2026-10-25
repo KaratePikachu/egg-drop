@@ -17,7 +17,7 @@ script = ExtResource("1_7lnir")
 win_floor = NodePath("WinFloor")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=380594531]
-position = Vector2(540, 1200)
+position = Vector2(540, 1688.5)
 limit_top = 0
 limit_bottom = 2500
 position_smoothing_enabled = true
