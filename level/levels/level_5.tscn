@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://8weeojuxwlrw"]
+
+[ext_resource type="PackedScene" uid="uid://cpg0ctscpw0h5" path="res://level/level.tscn" id="1_h7bmr"]
+[ext_resource type="PackedScene" uid="uid://buj37luy0o07e" path="res://obstacles/eagle/eagle.tscn" id="2_jhgna"]
+[ext_resource type="PackedScene" uid="uid://c0imnixfxxm2u" path="res://obstacles/boomerang/boomerang.tscn" id="3_hby2w"]
+[ext_resource type="PackedScene" uid="uid://b5fknl24w6u7h" path="res://obstacles/frog/frog.tscn" id="4_iea1r"]
+
+[node name="Level" unique_id=1976594912 instance=ExtResource("1_h7bmr")]
+
+[node name="Eagle" parent="." index="10" unique_id=1361653599 instance=ExtResource("2_jhgna")]
+position = Vector2(2455, 2113)
+eagle_velocity = -2200.0
+
+[node name="Boomerang" parent="." index="11" unique_id=645416866 instance=ExtResource("3_hby2w")]
+position = Vector2(-1124, 4234)
+direction = -1.0
+throw_distance = 2000.0
+
+[node name="Frog" parent="." index="12" unique_id=1310900993 instance=ExtResource("4_iea1r")]
+position = Vector2(573, 3009)
+
+[node name="Frog2" parent="." index="13" unique_id=865128773 instance=ExtResource("4_iea1r")]
+position = Vector2(-308, 5138)
+
+[node name="Frog3" parent="." index="14" unique_id=618228873 instance=ExtResource("4_iea1r")]
+position = Vector2(1318, 5075)
