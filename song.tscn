@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://jyu4p3v61v1f"]
 
 [ext_resource type="AudioStream" uid="uid://bajbi2k7gnb12" path="res://assets/music/egg theme.ogg" id="1_ua7c2"]
+[ext_resource type="Script" uid="uid://c4pkbi3c0yciv" path="res://song.gd" id="2_vpwdm"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1287312286]
 stream = ExtResource("1_ua7c2")
+volume_db = -15.0
 autoplay = true
 parameters/looping = true
+script = ExtResource("2_vpwdm")

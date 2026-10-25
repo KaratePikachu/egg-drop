@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5fknl24w6u7h" path="res://obstacles/frog/frog.tscn" id="4_iea1r"]
 
 [node name="Level" unique_id=1976594912 instance=ExtResource("1_h7bmr")]
+level_number = 5
 
 [node name="Eagle" parent="." index="9" unique_id=1361653599 instance=ExtResource("2_jhgna")]
 position = Vector2(2455, 2113)
