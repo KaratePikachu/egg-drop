@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dc72rt8fqehk6"]
+
+[ext_resource type="Script" uid="uid://744qmewj50vl" path="res://obstacles/wind/wind.gd" id="1_rpudw"]
+
+[sub_resource type="Gradient" id="Gradient_rpudw"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3escj"]
+gradient = SubResource("Gradient_rpudw")
+width = 16
+height = 16
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpudw"]
+size = Vector2(1000, 1000)
+
+[node name="Wind" type="Area2D" unique_id=1209714576 node_paths=PackedStringArray("collision_shape")]
+script = ExtResource("1_rpudw")
+collision_shape = NodePath("CollisionShape2D")
+wind_speed = -4.0
+size = Vector2(1000, 1000)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1079890137]
+position = Vector2(500, 0)
+amount = 100
+texture = SubResource("GradientTexture2D_3escj")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(0, 500)
+direction = Vector2(-1, 0)
+spread = 8.5
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 800.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1428527328]
+shape = SubResource("RectangleShape2D_rpudw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
