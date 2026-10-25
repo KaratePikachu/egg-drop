@@ -163,6 +163,9 @@ func _physics_process(delta: float) -> void:
 	var omega_accel = torque
 	if parachute_open:
 		omega_accel -= stiffness * theta + damping * omega
+		
+	if landed:
+		velocity.y = 0
 	
 	if parachute_open:
 		var accel = sin(theta) * tilt_factor * 1.5 - drag_x * velocity.x
