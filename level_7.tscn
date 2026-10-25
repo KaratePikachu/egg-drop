@@ -1,5 +1,32 @@
 [gd_scene format=3 uid="uid://ln5p74ohltnr"]
 
 [ext_resource type="PackedScene" uid="uid://cpg0ctscpw0h5" path="res://level/level.tscn" id="1_0muw3"]
+[ext_resource type="PackedScene" uid="uid://ujggyugtbxy5" path="res://obstacles/fat_guy/fat_guy.tscn" id="2_mvmg7"]
+[ext_resource type="PackedScene" uid="uid://dddb54taxyof4" path="res://obstacles/shark/shark.tscn" id="2_nak3m"]
+[ext_resource type="PackedScene" uid="uid://cxvx077rht6e3" path="res://obstacles/mafia/mafia.tscn" id="3_nak3m"]
 
 [node name="Level" unique_id=1976594912 instance=ExtResource("1_0muw3")]
+
+[node name="Shark" parent="WinFloor" parent_id_path=PackedInt32Array(1248466689) index="2" unique_id=645416866 instance=ExtResource("2_nak3m")]
+position = Vector2(323, 257)
+
+[node name="Shark" parent="WinFloor/Shark" index="1" unique_id=262366604]
+position = Vector2(0, 827)
+
+[node name="Shark2" parent="WinFloor" parent_id_path=PackedInt32Array(1248466689) index="3" unique_id=511062732 instance=ExtResource("2_nak3m")]
+position = Vector2(717, 257)
+
+[node name="Shark" parent="WinFloor/Shark2" index="1" unique_id=262366604]
+position = Vector2(0, 827)
+
+[node name="FatGuy" parent="." index="9" unique_id=2111557991 instance=ExtResource("2_mvmg7")]
+position = Vector2(572, 2682)
+
+[node name="Mafia" parent="." index="10" unique_id=192142462 instance=ExtResource("3_nak3m")]
+position = Vector2(1355, 4141)
+
+[node name="Mafia2" parent="." index="11" unique_id=1044332270 instance=ExtResource("3_nak3m")]
+position = Vector2(-314, 4150)
+
+[editable path="WinFloor/Shark"]
+[editable path="WinFloor/Shark2"]
