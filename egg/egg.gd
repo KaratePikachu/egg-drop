@@ -18,6 +18,8 @@ var parachute_open: bool
 var theta: float = 0.0
 var landed: bool = false
 
+var is_dead : bool = false
+
 signal die
 
 func _refresh_mods() -> void:
@@ -150,3 +152,13 @@ func _physics_process(delta: float) -> void:
 		if not landed:
 			velocity.y += (600 * delta)
 	move_and_slide()
+
+func death() -> void:
+	for node in get_children():
+		node.hide()
+	is_dead = true
+	$CPUParticles2D.show()
+	$CPUParticles2D.emitting = true
+	await $CPUParticles2D.finished
+	die.emit()
+	queue_free()

@@ -30,4 +30,4 @@ func _on_crosshair_body_entered(body: Node2D) -> void:
 	if not $Crosshair.visible:
 		return
 	
-	egg.die.emit()
+	egg.death()

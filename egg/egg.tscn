@@ -55,6 +55,13 @@ metadata/_custom_type_script = "uid://cylr504fygfq5"
 radius = 61.0
 height = 192.0
 
+[sub_resource type="Gradient" id="Gradient_umx0v"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.9647059, 0.8352941, 0.60784316, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_umx0v"]
+gradient = SubResource("Gradient_umx0v")
+
 [node name="Egg" type="CharacterBody2D" unique_id=804795384 groups=["egg"]]
 script = ExtResource("1_umx0v")
 parachute_terminal_velocity = 180.0
@@ -66,3 +73,16 @@ texture = ExtResource("7_j3bdp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1788349621]
 position = Vector2(2, 107)
 shape = SubResource("CapsuleShape2D_3d5hr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=275551600]
+position = Vector2(0, 104)
+emitting = false
+amount = 20
+texture = SubResource("GradientTexture2D_umx0v")
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 80.56
+spread = 180.0
+gravity = Vector2(0, 500)
+initial_velocity_max = 489.52

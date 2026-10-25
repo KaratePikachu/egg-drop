@@ -6,6 +6,7 @@ enum Phase{
 	INITIAL_PAN,
 	MODIFY,
 	DROP,
+	END,
 }
 
 static var entering_new_level : bool = true
@@ -66,7 +67,7 @@ func _ready() -> void:
 		current_phase = Phase.MODIFY
 
 func _process(delta: float) -> void:
-	if current_phase == Phase.DROP:
+	if current_phase == Phase.DROP and not egg.is_dead:
 		#var diff : float = absf(egg.global_position.y-camera.global_position.y)
 		set_camera(egg.global_position.y+800)
 
@@ -82,6 +83,7 @@ func start_drop() -> void:
 	
 	
 func lose() -> void:
+	current_phase = Phase.END
 	$CanvasLayer/LevelEnd.did_win = false
 	$CanvasLayer/LevelEnd.appear()
 
