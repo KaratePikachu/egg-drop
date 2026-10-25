@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="EggDrop"
+run/main_scene="uid://gey1vtq0ytyj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
