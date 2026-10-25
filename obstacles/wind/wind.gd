@@ -38,7 +38,7 @@ func _update_shape() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Egg:
 		body.fan_force += -wind_speed
-		if not SFXWind.playing():
+		if not SFXWind.playing:
 			SFXWind.play()
 
 
