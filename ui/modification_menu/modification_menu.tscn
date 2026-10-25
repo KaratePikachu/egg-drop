@@ -13,6 +13,24 @@ border_color = Color(0.49803922, 0.19215687, 0, 1)
 corner_radius_top_left = 70
 corner_radius_bottom_left = 70
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7djve"]
+bg_color = Color(0.33418208, 0.11800987, 4.813075e-08, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_bottom = 20
+border_color = Color(0.49803922, 0.19215687, 0, 1)
+corner_radius_top_left = 70
+corner_radius_bottom_left = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osh7i"]
+bg_color = Color(0.47437263, 0.1820291, 0, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_bottom = 20
+border_color = Color(0.49803922, 0.19215687, 0, 1)
+corner_radius_top_left = 70
+corner_radius_bottom_left = 70
+
 [sub_resource type="Animation" id="Animation_osh7i"]
 length = 0.001
 tracks/0/type = "value"
@@ -26,6 +44,47 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1080.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1bco5"]
+resource_name = "appear"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlidingArea:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1210.0, 1080.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_7djve"]
@@ -65,6 +124,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_osh7i"]
 _data = {
 &"RESET": SubResource("Animation_osh7i"),
+&"appear": SubResource("Animation_1bco5"),
 &"hide": SubResource("Animation_7djve"),
 &"show": SubResource("Animation_sueqx")
 }
@@ -82,26 +142,29 @@ mod_button_container = NodePath("SlidingArea/Panel/MarginContainer/VBoxContainer
 [node name="SlidingArea" type="Control" parent="." unique_id=1819905087]
 layout_mode = 1
 anchor_left = 0.5925926
-anchor_top = 0.50666666
+anchor_top = 0.23666666
 anchor_right = 1.0000001
-anchor_bottom = 1.0
+anchor_bottom = 0.72999996
 offset_left = 440.0
 offset_right = 440.00012
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Tab" type="Panel" parent="SlidingArea" unique_id=2099842111]
+[node name="Tab" type="Button" parent="SlidingArea" unique_id=932624111]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.29090908
-anchor_right = 0.21818182
-anchor_bottom = 0.16216215
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.99994
 offset_top = 48.0
-offset_bottom = 48.0
+offset_right = -344.00024
+offset_bottom = -944.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7lnir")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7lnir")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7djve")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osh7i")
 
 [node name="TextureRect" type="TextureRect" parent="SlidingArea/Tab" unique_id=1315462943]
 custom_minimum_size = Vector2(100, 0)
@@ -111,27 +174,15 @@ anchor_left = 0.116000004
 anchor_top = 0.208
 anchor_right = 0.56200004
 anchor_bottom = 0.79200006
-offset_left = 0.01599884
+offset_left = 0.015863419
 offset_top = 0.06400299
-offset_right = 0.11199188
+offset_right = 0.11185455
 offset_bottom = -0.06401062
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_nihoe")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="Button" type="Button" parent="SlidingArea/Tab" unique_id=932624111]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.00012207031
-offset_right = 0.00012207031
-grow_horizontal = 2
-grow_vertical = 2
-toggle_mode = true
 
 [node name="Panel" type="Panel" parent="SlidingArea" unique_id=1903627951]
 layout_mode = 1
@@ -185,4 +236,5 @@ layout_mode = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=52377448]
 libraries/ = SubResource("AnimationLibrary_osh7i")
 
-[connection signal="toggled" from="SlidingArea/Tab/Button" to="." method="_on_button_toggled"]
+[connection signal="pressed" from="SlidingArea/Tab" to="." method="_on_tab_pressed"]
+[connection signal="toggled" from="SlidingArea/Tab" to="." method="_on_button_toggled"]

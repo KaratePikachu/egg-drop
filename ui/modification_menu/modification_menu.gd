@@ -8,12 +8,18 @@ class_name ModificationMenu
 		available_mods = val
 		_reload_available_mods()
 
+var mod_menu_out : bool = false
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
+func play_appear_animation() -> bool:
+	animation_player.play("appear")
+	await animation_player.animation_finished
+	return true
 
-func _on_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
+func _on_tab_pressed() -> void:
+	mod_menu_out = !mod_menu_out
+	if mod_menu_out:
 		animation_player.play("show",0.1)
 	else:
 		animation_player.play("hide",0.1)
