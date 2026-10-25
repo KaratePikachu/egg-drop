@@ -64,7 +64,12 @@ func _ready() -> void:
 		mod_menu.play_appear_animation()
 	else:
 		current_phase = Phase.MODIFY
-		
+
+func _process(delta: float) -> void:
+	if current_phase == Phase.DROP:
+		#var diff : float = absf(egg.global_position.y-camera.global_position.y)
+		set_camera(egg.global_position.y+800)
+
 func start_drop() -> void:
 	egg = egg_scene.instantiate()
 	egg.modifications = active_modifications.duplicate_deep()
@@ -77,7 +82,8 @@ func start_drop() -> void:
 	
 	
 func lose() -> void:
-	print("you lose")
+	$CanvasLayer/LevelEnd.did_win = false
+	$CanvasLayer/LevelEnd.appear()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart_level"):
@@ -97,6 +103,13 @@ func _input(event: InputEvent) -> void:
 				move_camera(-event.relative.y)
 		Phase.DROP:
 			pass
+
+func set_camera(y : float) -> void:
+	camera.position.y = clampf(
+		y,
+		camera_min_y,
+		camera_max_y
+	)
 
 func move_camera(delta : float) -> void:
 	camera.position.y = clampf(
