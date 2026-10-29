@@ -9,4 +9,10 @@ var type : Type = Type.MM
 
 func play_level() -> void:
 	type = Type.LEVEL
-	#stream = 
+	stream = preload("res://assets/music/egg theme.ogg")
+	play()
+
+func play_mm() -> void:
+	type = Type.MM
+	stream = preload("res://No Clipping.wav")
+	play()

@@ -161,8 +161,8 @@ func restart_level() -> void:
 	get_tree().reload_current_scene()
 
 static func load_level(level_num : int) -> void:
-	#if Song.type == Song.Type.MM:
-		#Song.play_level()
+	if Song.type == Song.Type.MM:
+		Song.play_level()
 	entering_new_level = true
 	SceneChanger.change_to_file(levels[level_num-1])
 #endregion
